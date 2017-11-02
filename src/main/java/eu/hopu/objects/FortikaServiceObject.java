@@ -24,20 +24,97 @@ public class FortikaServiceObject extends BaseInstanceEnabler {
         this.status = status;
     }
 
+    public FortikaServiceObject() {
+    }
 
     @Override
     public ReadResponse read(int resourceid) {
-        return super.read(resourceid);
+        switch (resourceid) {
+            case 0:
+                System.out.println("Reading ID");
+                return ReadResponse.success(resourceid, getId());
+            case 1:
+                System.out.println("Reading Name");
+                return ReadResponse.success(resourceid, getName());
+            case 2:
+                System.out.println("Reading Url");
+                return ReadResponse.success(resourceid, getUrl());
+            case 3:
+                System.out.println("Reading Status");
+                return ReadResponse.success(resourceid, getStatus());
+            default:
+                return super.read(resourceid);
+        }
     }
 
     @Override
     public ExecuteResponse execute(int resourceid, String params) {
-        return ExecuteResponse.success();
+        if(resourceid == 4){
+            id = "service id";
+            name = "service name";
+            url = "service url";
+            status = 0;
+            return ExecuteResponse.success();
+        }
+        return ExecuteResponse.badRequest("Resource not found");
     }
-
 
     @Override
     public WriteResponse write(int resourceid, LwM2mResource value) {
-        return super.write(resourceid, value);
+        switch (resourceid) {
+            case 0:
+                System.out.println("VALUE: " + value);
+                id = value.getValue().toString();
+                return WriteResponse.success();
+            case 1:
+                System.out.println("VALUE: " + value);
+                name = value.getValue().toString();
+                return WriteResponse.success();
+            case 2:
+                System.out.println("VALUE: " + value);
+                url = value.getValue().toString();
+                return WriteResponse.success();
+            case 3:
+                System.out.println("VALUE: " + value);
+                status = Integer.parseInt(value.getValue().toString());
+                return WriteResponse.success();
+            default:
+                return super.write(resourceid, value);
+        }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }
+
+
+

@@ -1,13 +1,21 @@
 [
   {
-    "name": "Fortika Device",
-    "serverUrl": "coap://leshan.eclipse.org",
+    "name": "HOP3497f69b35e3",
+    "serverUrl": "coap://94.23.28.101",
     "serverPort": "5683",
     "lifetime": 30,
     "device": {
       "batteryStatus": 0,
       "batteryLevel": 100
     },
+    "fortikaServices":[
+      {
+        "id": "service id",
+        "name": "service name",
+        "url": "service url",
+        "status": 1
+      }
+    ],
     "localAddress": "0.0.0.0",
     "localPort": 1234
   }

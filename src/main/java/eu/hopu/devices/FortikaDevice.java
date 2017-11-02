@@ -4,7 +4,6 @@ import eu.hopu.objects.FortikaServiceObject;
 import org.eclipse.leshan.client.resource.LwM2mObjectEnabler;
 import org.eclipse.leshan.client.resource.ObjectsInitializer;
 import org.eclipse.leshan.core.model.ObjectModel;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -31,7 +30,6 @@ public class FortikaDevice extends DeviceBase {
 
 
 
-    @NotNull
     private FortikaServiceObject[] fortikaServiceListToArray(List<FortikaServiceObject> services) {
         FortikaServiceObject[] fortikaServices = new FortikaServiceObject[services.size()];
         int index = 0;
