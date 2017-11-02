@@ -21,7 +21,7 @@ public class DeviceObject extends BaseInstanceEnabler {
         this.batteryStatus = batteryStatus;
         this.batteryLevel = batteryLevel;
 
-        Timer timer = new Timer("Device Observer Timer");
+        Timer timer = new Timer("SmartSpot Observer Timer");
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -100,7 +100,7 @@ public class DeviceObject extends BaseInstanceEnabler {
 
     // Not Used
     private String getManufacturer() {
-        return "Leshan Demo Device";
+        return "Leshan Demo SmartSpot";
     }
 
     private String getModelNumber() {

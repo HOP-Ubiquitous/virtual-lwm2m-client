@@ -4683,5 +4683,58 @@
         "description": "Obseration date"
       }
     ]
+  },
+  {
+    "name": "Fortika Service",
+    "id": 28201,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "Services enabled in Fortika cloud",
+    "resourcedefs": [
+      {
+        "id": 0,
+        "name": "Id",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "Service Id"
+      },
+      {
+        "id": 1,
+        "name": "Name",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "Service Name"
+      },
+      {
+        "id": 2,
+        "name": "Name",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "Service Cloud Url"
+      },
+      {
+        "id": 3,
+        "name": "url",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "Service Status 0: stopped, 1: active, 2: paused"
+      }
+    ]
   }
 ]

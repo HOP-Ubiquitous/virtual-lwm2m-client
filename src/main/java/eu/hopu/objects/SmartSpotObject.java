@@ -19,7 +19,7 @@ public class SmartSpotObject extends BaseInstanceEnabler {
 
     @Override
     public ReadResponse read(int resourceid) {
-        LOG.info("Read on Device Resource " + resourceid);
+        LOG.info("Read on SmartSpot Resource " + resourceid);
         System.out.println("Read operation received with resourceid " + resourceid);
 
         switch (resourceid) {
@@ -42,13 +42,13 @@ public class SmartSpotObject extends BaseInstanceEnabler {
 
     @Override
     public ExecuteResponse execute(int resourceid, String params) {
-        LOG.info("Execute on Device resource " + resourceid);
+        LOG.info("Execute on SmartSpot resource " + resourceid);
         return ExecuteResponse.success();
     }
 
     @Override
     public WriteResponse write(int resourceid, LwM2mResource value) {
-        LOG.info("Write on Device Resource " + resourceid + " value " + value);
+        LOG.info("Write on SmartSpot Resource " + resourceid + " value " + value);
         return super.write(resourceid, value);
     }
 

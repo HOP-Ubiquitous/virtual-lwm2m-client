@@ -1,7 +1,7 @@
 [
   {
     "name": "Hop_Ubiquitous",
-    "serverUrl": "coap://localhost",
+    "serverUrl": "coap://leshan.eclipse.org",
     "serverPort": "5683",
     "lifetime": 30,
     "device": {
@@ -76,7 +76,7 @@
   },
   {
     "name": "Ouka_leele",
-    "serverUrl": "coap://localhost",
+    "serverUrl": "coap://leshan.eclipse.org",
     "serverPort": "5683",
     "lifetime": 30,
     "device": {

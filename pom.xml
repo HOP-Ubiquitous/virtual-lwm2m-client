@@ -24,6 +24,7 @@
             <groupId>org.eclipse.leshan</groupId>
             <artifactId>leshan-all</artifactId>
             <version>0.1.11-M9</version>
+            <!--<version>RELEASE</version>-->
         </dependency>
 
         <dependency>

@@ -37,7 +37,7 @@ public class IpsoHumidityObject extends BaseInstanceEnabler {
 
     @Override
     public ReadResponse read(int resourceid) {
-        LOG.info("Read on Device Resource " + resourceid);
+        LOG.info("Read on SmartSpot Resource " + resourceid);
         switch (resourceid) {
             case 5700:
                 return ReadResponse.success(resourceid, getSensorValue());

@@ -3,15 +3,15 @@ package eu.hopu.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DeviceDto {
+public class Battery {
 
     private int batteryStatus;
     private int batteryLevel;
 
-    public DeviceDto() {
+    public Battery() {
     }
 
-    public DeviceDto(int batteryStatus, int batteryLevel) {
+    public Battery(int batteryStatus, int batteryLevel) {
         this.batteryStatus = batteryStatus;
         this.batteryLevel = batteryLevel;
     }
@@ -34,7 +34,7 @@ public class DeviceDto {
 
     @Override
     public String toString() {
-        return "DeviceDto{" +
+        return "Battery{" +
                 "batteryStatus=" + batteryStatus +
                 ", batteryLevel=" + batteryLevel +
                 '}';
