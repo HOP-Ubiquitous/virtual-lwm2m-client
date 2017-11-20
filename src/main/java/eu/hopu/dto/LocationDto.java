@@ -3,15 +3,15 @@ package eu.hopu.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Location {
+public class LocationDto {
     private float latitude;
     private float longitude;
     private float altitude;
 
-    public Location() {
+    public LocationDto() {
     }
 
-    public Location(float latitude, float longitude, float altitude) {
+    public LocationDto(float latitude, float longitude, float altitude) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
@@ -43,7 +43,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
+        return "LocationDto{" +
                 "latitude=" + latitude +
                 ", longitude=" + longitude +
                 ", altitude=" + altitude +

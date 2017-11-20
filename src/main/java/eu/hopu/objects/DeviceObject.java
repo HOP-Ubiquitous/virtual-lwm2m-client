@@ -6,22 +6,22 @@ import org.eclipse.leshan.core.node.LwM2mResource;
 import org.eclipse.leshan.core.response.ExecuteResponse;
 import org.eclipse.leshan.core.response.ReadResponse;
 import org.eclipse.leshan.core.response.WriteResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class DeviceObject extends BaseInstanceEnabler {
 
+    private final String name;
     private final int batteryStatus;
     private int batteryLevel;
 
-    public DeviceObject(int batteryStatus, int batteryLevel) {
+    public DeviceObject(String name, int batteryStatus, int batteryLevel) {
+        this.name = name;
         this.batteryStatus = batteryStatus;
         this.batteryLevel = batteryLevel;
 
-        Timer timer = new Timer("SmartSpot Observer Timer");
+        Timer timer = new Timer("DeviceObject Observer Timer");
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -100,7 +100,7 @@ public class DeviceObject extends BaseInstanceEnabler {
 
     // Not Used
     private String getManufacturer() {
-        return "Leshan Demo SmartSpot";
+        return this.name;
     }
 
     private String getModelNumber() {
@@ -157,5 +157,9 @@ public class DeviceObject extends BaseInstanceEnabler {
 
     private long getMemoryTotal() {
         return Runtime.getRuntime().totalMemory() / 1024;
+    }
+
+    public String getName() {
+        return name;
     }
 }

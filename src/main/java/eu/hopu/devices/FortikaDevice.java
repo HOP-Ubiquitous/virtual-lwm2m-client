@@ -13,7 +13,7 @@ import static org.eclipse.leshan.LwM2mId.SERVER;
 
 public class FortikaDevice extends DeviceBase {
 
-    public static final String DEFINITION = "fortika_devices.json";
+    public static final String DEFINITION = "fortika_test_devices.json";
 
     private List<FortikaServiceObject> fortikaServices;
 
@@ -26,8 +26,6 @@ public class FortikaDevice extends DeviceBase {
 
         return initializer;
     }
-
-
 
 
     private FortikaServiceObject[] fortikaServiceListToArray(List<FortikaServiceObject> services) {

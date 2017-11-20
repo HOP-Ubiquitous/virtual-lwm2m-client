@@ -16,18 +16,17 @@ import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 
-public class VirtualSmartSpotsLauncher {
+public class VirtualDevicesLauncher {
 
     public static void main(String[] args) throws IOException {
 
         String path = (args.length == 0) ? "src/main/resources/" : "opt/lwm2m-iotagent-client/lib/";
 
         List<DeviceBase> devices = getDevicesDefinition(FortikaDevice.DEFINITION, path);
-        List<ObjectModel> models = ObjectLoader.loadJsonStream(new FileInputStream(path + "objectspec_debug.json"));
+        List<ObjectModel> models = ObjectLoader.loadJsonStream(new FileInputStream(path + "objectSpecs/objectspec_debug.json"));
         List<LeshanClient> clientsLaunched = new LinkedList<>();
 
         for (DeviceBase device : devices) {
-
             final LeshanClient client = device.getLeshanClient(models);
             clientsLaunched.add(client);
             new Thread() {

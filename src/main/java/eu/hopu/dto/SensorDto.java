@@ -3,16 +3,16 @@ package eu.hopu.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Sensor {
+public class SensorDto {
 
     private double maxValue;
     private double minValue;
     private double sensorValue;
 
-    public Sensor() {
+    public SensorDto() {
     }
 
-    public Sensor(double maxValue, double minValue, double sensorValue) {
+    public SensorDto(double maxValue, double minValue, double sensorValue) {
         this.maxValue = maxValue;
         this.minValue = minValue;
         this.sensorValue = sensorValue;
@@ -44,7 +44,7 @@ public class Sensor {
 
     @Override
     public String toString() {
-        return "Sensor{" +
+        return "SensorDto{" +
                 "maxValue=" + maxValue +
                 ", minValue=" + minValue +
                 ", sensorValue=" + sensorValue +

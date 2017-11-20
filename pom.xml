@@ -23,8 +23,8 @@
         <dependency>
             <groupId>org.eclipse.leshan</groupId>
             <artifactId>leshan-all</artifactId>
-            <version>0.1.11-M9</version>
-            <!--<version>RELEASE</version>-->
+            <!--<version>0.1.11-M9</version>-->
+            <version>RELEASE</version>
         </dependency>
 
         <dependency>
@@ -66,7 +66,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>eu.hopu.VirtualSmartSpotsLauncher</mainClass>
+                            <mainClass>eu.hopu.VirtualDevicesLauncher</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

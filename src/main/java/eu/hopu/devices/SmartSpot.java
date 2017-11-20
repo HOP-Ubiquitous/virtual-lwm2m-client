@@ -1,9 +1,9 @@
 package eu.hopu.devices;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import eu.hopu.dto.Battery;
-import eu.hopu.dto.Location;
-import eu.hopu.dto.Sensor;
+import eu.hopu.dto.DeviceDto;
+import eu.hopu.dto.LocationDto;
+import eu.hopu.dto.SensorDto;
 import eu.hopu.objects.*;
 import org.eclipse.leshan.client.resource.LwM2mObjectEnabler;
 import org.eclipse.leshan.client.resource.ObjectsInitializer;
@@ -19,11 +19,11 @@ public class SmartSpot extends DeviceBase {
 
     public static final String DEFINITION = "smart_spots.json";
 
-    private Location location;
-    private List<Sensor> temperatures;
-    private List<Sensor> humidities;
-    private Sensor loudness;
-    private List<Sensor> gasses;
+    private LocationDto location;
+    private List<SensorDto> temperatures;
+    private List<SensorDto> humidities;
+    private SensorDto loudness;
+    private List<SensorDto> gasses;
     private String physicalUrl;
     private boolean crowdMonitoring;
 
@@ -32,7 +32,7 @@ public class SmartSpot extends DeviceBase {
         super();
     }
 
-    public SmartSpot(String name, String serverUrl, String serverPort, int lifetime, Battery device, Location location, List<Sensor> temperatures, List<Sensor> humidities, Sensor loudness, List<Sensor> gasses, String physicalUrl, boolean crowdMonitoring, String localAddress, int localPort) {
+    public SmartSpot(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, List<SensorDto> temperatures, List<SensorDto> humidities, SensorDto loudness, List<SensorDto> gasses, String physicalUrl, boolean crowdMonitoring, String localAddress, int localPort) {
         super(name, serverUrl, serverPort, lifetime, device, localAddress, localPort);
         this.location = location;
         this.temperatures = temperatures;
@@ -43,43 +43,43 @@ public class SmartSpot extends DeviceBase {
         this.crowdMonitoring = crowdMonitoring;
     }
 
-    public Location getLocation() {
+    public LocationDto getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(LocationDto location) {
         this.location = location;
     }
 
-    public List<Sensor> getTemperatures() {
+    public List<SensorDto> getTemperatures() {
         return temperatures;
     }
 
-    public void setTemperatures(List<Sensor> temperatures) {
+    public void setTemperatures(List<SensorDto> temperatures) {
         this.temperatures = temperatures;
     }
 
-    public List<Sensor> getHumidities() {
+    public List<SensorDto> getHumidities() {
         return humidities;
     }
 
-    public void setHumidities(List<Sensor> humidities) {
+    public void setHumidities(List<SensorDto> humidities) {
         this.humidities = humidities;
     }
 
-    public Sensor getLoudness() {
+    public SensorDto getLoudness() {
         return loudness;
     }
 
-    public void setLoudness(Sensor loudness) {
+    public void setLoudness(SensorDto loudness) {
         this.loudness = loudness;
     }
 
-    public List<Sensor> getGasses() {
+    public List<SensorDto> getGasses() {
         return gasses;
     }
 
-    public void setGasses(List<Sensor> gasses) {
+    public void setGasses(List<SensorDto> gasses) {
         this.gasses = gasses;
     }
 
@@ -107,42 +107,42 @@ public class SmartSpot extends DeviceBase {
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = super.getObjectInitializer(models);
 
-        Location location = getLocation();
+        LocationDto location = getLocation();
         if (location != null)
             initializer.setInstancesForObject(LOCATION, new LocationObject(location.getLatitude(), location.getLongitude(), location.getAltitude()));
 
-        List<Sensor> temperatures = getTemperatures();
+        List<SensorDto> temperatures = getTemperatures();
         if (temperatures != null) {
             IpsoTemperatureObject[] ipsoTemp = new IpsoTemperatureObject[temperatures.size()];
             int index = 0;
-            for (Sensor temperature : temperatures) {
+            for (SensorDto temperature : temperatures) {
                 ipsoTemp[index++] = new IpsoTemperatureObject(
                         temperature.getMaxValue(), temperature.getMinValue(), temperature.getSensorValue());
             }
             initializer.setInstancesForObject(3303, ipsoTemp);
         }
 
-        List<Sensor> humidities = getHumidities();
+        List<SensorDto> humidities = getHumidities();
         if (humidities != null) {
             IpsoHumidityObject[] ipsoHum = new IpsoHumidityObject[humidities.size()];
             int index = 0;
-            for (Sensor humidity : humidities) {
+            for (SensorDto humidity : humidities) {
                 ipsoHum[index++] = new IpsoHumidityObject(
                         humidity.getMaxValue(), humidity.getMinValue(), humidity.getSensorValue());
             }
             initializer.setInstancesForObject(3304, ipsoHum);
         }
 
-        Sensor loudness = getLoudness();
+        SensorDto loudness = getLoudness();
         if (loudness != null)
             initializer.setInstancesForObject(3324, new IpsoLoudnessObject(
                     loudness.getMaxValue(), loudness.getMinValue(), loudness.getSensorValue()));
 
-        List<Sensor> gasses = getGasses();
+        List<SensorDto> gasses = getGasses();
         if (gasses != null) {
             IpsoConcentrationObject[] ipsoGasses = new IpsoConcentrationObject[gasses.size()];
             int index = 0;
-            for (Sensor gas : gasses) {
+            for (SensorDto gas : gasses) {
                 ipsoGasses[index++] = new IpsoConcentrationObject(
                         gas.getMaxValue(), gas.getMinValue(), gas.getSensorValue());
             }

@@ -22,7 +22,7 @@ public class IpsoLoudnessObject extends BaseInstanceEnabler {
         this.minValue = minValue;
         this.sensorValue = sensorValue;
 
-        Timer timer = new Timer("Sensor Value");
+        Timer timer = new Timer("SensorDto Value");
         timer.schedule(new TimerTask() {
             @Override
             public void run() {

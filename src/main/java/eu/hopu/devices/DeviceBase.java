@@ -1,6 +1,7 @@
 package eu.hopu.devices;
 
-import eu.hopu.dto.Battery;
+
+import eu.hopu.dto.DeviceDto;
 import eu.hopu.objects.DeviceObject;
 import org.eclipse.leshan.client.californium.LeshanClient;
 import org.eclipse.leshan.client.californium.LeshanClientBuilder;
@@ -17,6 +18,7 @@ import static org.eclipse.leshan.LwM2mId.DEVICE;
 import static org.eclipse.leshan.LwM2mId.SECURITY;
 import static org.eclipse.leshan.LwM2mId.SERVER;
 import static org.eclipse.leshan.client.object.Security.noSec;
+import static org.eclipse.leshan.client.object.Security.noSecBootstap;
 
 public abstract class DeviceBase {
 
@@ -24,19 +26,19 @@ public abstract class DeviceBase {
     private String serverUrl;
     private String serverPort;
     private int lifetime;
-    private Battery device;
+    private DeviceDto deviceDto;
     private String localAddress;
     private int localPort;
 
     public DeviceBase() {
     }
 
-    public DeviceBase(String name, String serverUrl, String serverPort, int lifetime, Battery device, String localAddress, int localPort) {
+    public DeviceBase(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, String localAddress, int localPort) {
         this.name = name;
         this.serverUrl = serverUrl;
         this.serverPort = serverPort;
         this.lifetime = lifetime;
-        this.device = device;
+        this.deviceDto = device;
         this.localAddress = localAddress;
         this.localPort = localPort;
     }
@@ -73,12 +75,12 @@ public abstract class DeviceBase {
         this.lifetime = lifetime;
     }
 
-    public Battery getDevice() {
-        return device;
+    public DeviceDto getDevice() {
+        return deviceDto;
     }
 
-    public void setDevice(Battery device) {
-        this.device = device;
+    public void setDevice(DeviceDto deviceDto) {
+        this.deviceDto = deviceDto;
     }
 
     public String getLocalAddress() {
@@ -112,12 +114,9 @@ public abstract class DeviceBase {
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = new ObjectsInitializer(new LwM2mModel(models));
 
-        initializer.setInstancesForObject(SECURITY, noSec(getServerUrl() + ":" + getServerPort(), 123));
+        initializer.setInstancesForObject(SECURITY, noSecBootstap(getServerUrl() + ":" + getServerPort()));
         initializer.setInstancesForObject(SERVER, new Server(123, getLifetime(), BindingMode.U, false));
-
-        Battery deviceDto = getDevice();
-        if (deviceDto != null)
-            initializer.setInstancesForObject(DEVICE, new DeviceObject(deviceDto.getBatteryStatus(), deviceDto.getBatteryLevel()));
+        initializer.setInstancesForObject(DEVICE, new DeviceObject(name, deviceDto.getBatteryStatus(), deviceDto.getBatteryLevel()));
 
         return initializer;
     }

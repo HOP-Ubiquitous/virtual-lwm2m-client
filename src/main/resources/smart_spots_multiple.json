@@ -1,0 +1,1502 @@
+[
+  {
+    "name": "Hop_Ubiquitous",
+    "serverUrl": "coap://164.132.112.218",
+    "serverPort": "5014",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.0770456,
+      "longitude": -1.2712549000000308,
+      "altitude": 1
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1234
+  },
+  {
+    "name": "Ouka_leele",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.080720,
+      "longitude": -1.276781,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1235
+  },
+  {
+    "name": "Ayuntamiento_de_Ceutí",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.077750,
+      "longitude": -1.274388,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1236
+  },
+  {
+    "name": "La_Conservera",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.079193,
+      "longitude": -1.268818,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1237
+  },
+  {
+    "name": "Parque_de_la_Constitución",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.078285,
+      "longitude": -1.278416,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1238
+  },
+  {
+    "name": "Complejo_deportivo_Antonio_Peñalver",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.082150,
+      "longitude": -1.278468,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1239
+  },
+  {
+    "name": "Ermita_de_San_Roque",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.081941,
+      "longitude": -1.285064,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1240
+  },
+  {
+    "name": "Colegio_San_Roque",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.080425,
+      "longitude": -1.281345,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1241
+  },
+  {
+    "name": "IES_Felipe_de_Borbón",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.080028,
+      "longitude": -1.265347,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1242
+  },
+  {
+    "name": "Residencia_San_Pablo",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.083132,
+      "longitude": -1.283040,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1243
+  },
+  {
+    "name": "Auditorio_de_Ceutí",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.077170,
+      "longitude": -1.276326,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1244
+  },
+  {
+    "name": "Colegio_Diego_Martínez_Rico",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.075227,
+      "longitude": -1.272698,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1245
+  },
+  {
+    "name": "Parroquia_Sta._María_Magdalena",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.078922,
+      "longitude": -1.279663,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1246
+  },
+  {
+    "name": "Colegio_Juan_Ayala_Hurtado",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.082324,
+      "longitude": -1.271061,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1247
+  },
+  {
+    "name": "Colegio_Magda",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.084794,
+      "longitude": -1.278188,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1248
+  },
+  {
+    "name": "Colegio_Los_Torraos",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.098345,
+      "longitude": -1.278655,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1249
+  },
+  {
+    "name": "Cementerio",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.092569,
+      "longitude": -1.280898,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1250
+  },
+  {
+    "name": "Polígono_Los_Torraos",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.092014,
+      "longitude": -1.289346,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1251
+  },
+  {
+    "name": "Polígono_de_Ceutí",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.084112,
+      "longitude": -1.268684,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1252
+  },
+  {
+    "name": "Parque_La_Tejera",
+    "serverUrl": "coap://127.0.0.1",
+    "serverPort": "5683",
+    "lifetime": 30,
+    "device": {
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.088290,
+      "longitude": -1.277441,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      },
+      {
+        "maxValue": 27,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      },
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 42
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "localAddress": "0.0.0.0",
+    "localPort": 1253
+  }
+]
