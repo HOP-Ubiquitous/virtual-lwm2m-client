@@ -1,0 +1,14 @@
+[
+  {
+    "a": {
+      "1": "resource a.1",
+      "2": "resource a.2"
+    }
+  },
+  {
+    "b": {
+      "1": "resource b.1",
+      "2": "resource b.2"
+    }
+  }
+]

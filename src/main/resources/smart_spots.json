@@ -1,10 +1,11 @@
 [
   {
-    "name": "Hop_Ubiquitous",
-    "serverUrl": "coap://164.132.112.218",
-    "serverPort": "5012",
+    "name": "HOPf4b85eab9b1c",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5683",
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -80,6 +81,7 @@
     "serverPort": "5012",
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -155,6 +157,7 @@
     "serverPort": "5013",
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },

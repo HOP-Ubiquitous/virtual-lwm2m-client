@@ -1,6 +1,9 @@
 package eu.hopu.devices;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import eu.hopu.dto.DeviceDto;
 import eu.hopu.dto.LocationDto;
 import eu.hopu.dto.SensorDto;
@@ -12,14 +15,12 @@ import org.eclipse.leshan.core.model.ObjectModel;
 import java.util.List;
 
 import static org.eclipse.leshan.LwM2mId.*;
-import static org.eclipse.leshan.LwM2mId.LOCATION;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SmartSpot extends DeviceBase {
 
-    public static final String DEFINITION = "smart_spots.json";
+    private final static Gson gson = new Gson();
 
-    private LocationDto location;
     private List<SensorDto> temperatures;
     private List<SensorDto> humidities;
     private SensorDto loudness;
@@ -32,9 +33,8 @@ public class SmartSpot extends DeviceBase {
         super();
     }
 
-    public SmartSpot(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, List<SensorDto> temperatures, List<SensorDto> humidities, SensorDto loudness, List<SensorDto> gasses, String physicalUrl, boolean crowdMonitoring, String localAddress, int localPort) {
-        super(name, serverUrl, serverPort, lifetime, device, localAddress, localPort);
-        this.location = location;
+    public SmartSpot(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, List<SensorDto> temperatures, List<SensorDto> humidities, SensorDto loudness, List<SensorDto> gasses, String physicalUrl, boolean crowdMonitoring) {
+        super(name, serverUrl, serverPort, lifetime, device, location);
         this.temperatures = temperatures;
         this.humidities = humidities;
         this.loudness = loudness;
@@ -43,13 +43,33 @@ public class SmartSpot extends DeviceBase {
         this.crowdMonitoring = crowdMonitoring;
     }
 
-    public LocationDto getLocation() {
-        return location;
+    public SmartSpot(JsonObject jsonDevice) {
+        this(
+                jsonDevice.get("name").getAsString(), jsonDevice.get("serverUrl").getAsString(),
+                jsonDevice.get("serverPort").getAsString(), jsonDevice.get("lifetime").getAsInt(),
+                gson.fromJson(jsonDevice.get("device"), DeviceDto.class),
+                gson.fromJson(jsonDevice.get("location"), LocationDto.class),
+                (List<SensorDto>) gson.fromJson(
+                        jsonDevice.get("temperatures"),
+                        new TypeToken<List<SensorDto>>() {
+                        }.getType()
+                ),
+                (List<SensorDto>) gson.fromJson(
+                        jsonDevice.get("humidities"),
+                        new TypeToken<List<SensorDto>>() {
+                        }.getType()
+                ),
+                gson.fromJson(jsonDevice.get("loudness"), SensorDto.class),
+                (List<SensorDto>) gson.fromJson(
+                        jsonDevice.get("gasses"),
+                        new TypeToken<List<SensorDto>>() {
+                        }.getType()
+                ),
+                jsonDevice.get("physicalUrl").getAsString(),
+                jsonDevice.get("crowdMonitoring").getAsBoolean()
+        );
     }
 
-    public void setLocation(LocationDto location) {
-        this.location = location;
-    }
 
     public List<SensorDto> getTemperatures() {
         return temperatures;
@@ -107,17 +127,16 @@ public class SmartSpot extends DeviceBase {
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = super.getObjectInitializer(models);
 
-        LocationDto location = getLocation();
-        if (location != null)
-            initializer.setInstancesForObject(LOCATION, new LocationObject(location.getLatitude(), location.getLongitude(), location.getAltitude()));
-
         List<SensorDto> temperatures = getTemperatures();
         if (temperatures != null) {
             IpsoTemperatureObject[] ipsoTemp = new IpsoTemperatureObject[temperatures.size()];
             int index = 0;
             for (SensorDto temperature : temperatures) {
                 ipsoTemp[index++] = new IpsoTemperatureObject(
-                        temperature.getMaxValue(), temperature.getMinValue(), temperature.getSensorValue());
+                        temperature.getMaxValue(),
+                        temperature.getMinValue(),
+                        temperature.getSensorValue()
+                );
             }
             initializer.setInstancesForObject(3303, ipsoTemp);
         }
@@ -128,7 +147,10 @@ public class SmartSpot extends DeviceBase {
             int index = 0;
             for (SensorDto humidity : humidities) {
                 ipsoHum[index++] = new IpsoHumidityObject(
-                        humidity.getMaxValue(), humidity.getMinValue(), humidity.getSensorValue());
+                        humidity.getMaxValue(),
+                        humidity.getMinValue(),
+                        humidity.getSensorValue()
+                );
             }
             initializer.setInstancesForObject(3304, ipsoHum);
         }
@@ -144,7 +166,10 @@ public class SmartSpot extends DeviceBase {
             int index = 0;
             for (SensorDto gas : gasses) {
                 ipsoGasses[index++] = new IpsoConcentrationObject(
-                        gas.getMaxValue(), gas.getMinValue(), gas.getSensorValue());
+                        gas.getMaxValue(),
+                        gas.getMinValue(),
+                        gas.getSensorValue()
+                );
             }
             initializer.setInstancesForObject(3325, ipsoGasses);
         }
@@ -171,7 +196,7 @@ public class SmartSpot extends DeviceBase {
                 ", serverPort='" + getServerPort() + '\'' +
                 ", lifetime=" + getLifetime() +
                 ", device=" + getDevice() +
-                ", location=" + location +
+                ", location=" + getLocation() +
                 ", temperatures=" + temperatures +
                 ", humidities=" + humidities +
                 ", loudness=" + loudness +

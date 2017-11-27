@@ -7,9 +7,7 @@ import org.eclipse.leshan.core.model.ObjectModel;
 
 import java.util.List;
 
-import static org.eclipse.leshan.LwM2mId.DEVICE;
-import static org.eclipse.leshan.LwM2mId.SECURITY;
-import static org.eclipse.leshan.LwM2mId.SERVER;
+import static org.eclipse.leshan.LwM2mId.*;
 
 public class FortikaDevice extends DeviceBase {
 

@@ -1,12 +1,18 @@
 package eu.hopu.objects;
 
+import eu.hopu.dto.CoordinateDto;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
+import org.eclipse.leshan.core.node.LwM2mResource;
 import org.eclipse.leshan.core.response.ReadResponse;
+import org.eclipse.leshan.core.response.WriteResponse;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class LocationObject extends BaseInstanceEnabler {
 
+    public static final int LATITUDE = 0;
     private float latitude;
     private float longitude;
     private float altitude;
@@ -16,13 +22,14 @@ public class LocationObject extends BaseInstanceEnabler {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
-        timestamp = new Date();
+        this.timestamp = new Date();
     }
+
 
     @Override
     public ReadResponse read(int resourceid) {
         switch (resourceid) {
-            case 0:
+            case LATITUDE:
                 return ReadResponse.success(resourceid, getLatitude());
             case 1:
                 return ReadResponse.success(resourceid, getLongitude());
@@ -37,23 +44,40 @@ public class LocationObject extends BaseInstanceEnabler {
         }
     }
 
-    private float getLatitude() {
+
+    public float getLatitude() {
         return latitude;
     }
 
-    private float getLongitude() {
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public float getLongitude() {
         return longitude;
     }
 
-    private Date getTimestamp() {
-        return timestamp;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
-    private float getAltitude() {
+    public float getAltitude() {
         return altitude;
     }
 
-    private float getSpeed() {
+    public void setAltitude(float altitude) {
+        this.altitude = altitude;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public int getSpeed() {
         return 0;
     }
 }

@@ -12,6 +12,8 @@ import java.util.*;
 
 public class DeviceObject extends BaseInstanceEnabler {
 
+    public static final String JSON_NAME = "device";
+
     private final String name;
     private final int batteryStatus;
     private int batteryLevel;

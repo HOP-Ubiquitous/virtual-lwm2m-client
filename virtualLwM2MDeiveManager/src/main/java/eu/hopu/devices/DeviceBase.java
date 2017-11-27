@@ -2,7 +2,9 @@ package eu.hopu.devices;
 
 
 import eu.hopu.dto.DeviceDto;
+import eu.hopu.dto.LocationDto;
 import eu.hopu.objects.DeviceObject;
+import eu.hopu.objects.LocationObject;
 import org.eclipse.leshan.client.californium.LeshanClient;
 import org.eclipse.leshan.client.californium.LeshanClientBuilder;
 import org.eclipse.leshan.client.object.Server;
@@ -12,36 +14,53 @@ import org.eclipse.leshan.core.model.LwM2mModel;
 import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.BindingMode;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.eclipse.leshan.LwM2mId.DEVICE;
-import static org.eclipse.leshan.LwM2mId.SECURITY;
-import static org.eclipse.leshan.LwM2mId.SERVER;
+import static org.eclipse.leshan.LwM2mId.*;
 import static org.eclipse.leshan.client.object.Security.noSec;
 import static org.eclipse.leshan.client.object.Security.noSecBootstap;
 
 public abstract class DeviceBase {
+
+
+    public static final DeviceBase NULL = new DeviceBase() {
+        @Override
+        List<LwM2mObjectEnabler> getDeviceEnabledObjects(ObjectsInitializer objectsInitializer) {
+            return new ArrayList<>();
+        }
+    };
+
+    public static int DEVICE_PORT = 40000;
 
     private String name;
     private String serverUrl;
     private String serverPort;
     private int lifetime;
     private DeviceDto deviceDto;
-    private String localAddress;
+    private static final String LOCAL_ADDRESS = "0.0.0.0";
     private int localPort;
+    private LocationDto location;
+
 
     public DeviceBase() {
     }
 
-    public DeviceBase(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, String localAddress, int localPort) {
+    public DeviceBase(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location) {
         this.name = name;
         this.serverUrl = serverUrl;
         this.serverPort = serverPort;
         this.lifetime = lifetime;
         this.deviceDto = device;
-        this.localAddress = localAddress;
-        this.localPort = localPort;
+        this.localPort = getFreePort();
+        this.location = location;
     }
+
+
+    private synchronized int getFreePort() {
+        return DEVICE_PORT++;
+    }
+
 
     public String getName() {
         return name;
@@ -84,11 +103,7 @@ public abstract class DeviceBase {
     }
 
     public String getLocalAddress() {
-        return localAddress;
-    }
-
-    public void setLocalAddress(String localAddress) {
-        this.localAddress = localAddress;
+        return LOCAL_ADDRESS;
     }
 
     public int getLocalPort() {
@@ -97,6 +112,14 @@ public abstract class DeviceBase {
 
     public void setLocalPort(int localPort) {
         this.localPort = localPort;
+    }
+
+    public LocationDto getLocation() {
+        return location;
+    }
+
+    public void setLocation(LocationDto location) {
+        this.location = location;
     }
 
     public LeshanClient getLeshanClient(List<ObjectModel> models) {
@@ -114,12 +137,20 @@ public abstract class DeviceBase {
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = new ObjectsInitializer(new LwM2mModel(models));
 
-        initializer.setInstancesForObject(SECURITY, noSecBootstap(getServerUrl() + ":" + getServerPort()));
+        initializer.setInstancesForObject(SECURITY, noSec(getServerUrl() + ":" + getServerPort(), 123));
         initializer.setInstancesForObject(SERVER, new Server(123, getLifetime(), BindingMode.U, false));
         initializer.setInstancesForObject(DEVICE, new DeviceObject(name, deviceDto.getBatteryStatus(), deviceDto.getBatteryLevel()));
+
+        LocationDto location = getLocation();
+        if (location != null)
+            initializer.setInstancesForObject(LOCATION, new LocationObject(location.getLatitude(), location.getLongitude(), location.getAltitude()));
 
         return initializer;
     }
 
     abstract List<LwM2mObjectEnabler> getDeviceEnabledObjects(ObjectsInitializer objectsInitializer);
+
+    public String getModel() {
+        return this.getClass().getSimpleName();
+    }
 }
