@@ -43,11 +43,13 @@ public abstract class DeviceBase {
     private int localPort;
     private LocationDto location;
 
+    private boolean isBootstrap;
+
 
     public DeviceBase() {
     }
 
-    public DeviceBase(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location) {
+    public DeviceBase(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, Boolean isBootstrap) {
         this.name = name;
         this.serverUrl = serverUrl;
         this.serverPort = serverPort;
@@ -55,6 +57,7 @@ public abstract class DeviceBase {
         this.deviceDto = device;
         this.localPort = getFreePort();
         this.location = location;
+        this.isBootstrap = isBootstrap;
     }
 
 
@@ -123,6 +126,14 @@ public abstract class DeviceBase {
         this.location = location;
     }
 
+    public boolean isBootstrap() {
+        return isBootstrap;
+    }
+
+    public void setBootstrap(boolean bootstrap) {
+        isBootstrap = bootstrap;
+    }
+
     public LeshanClient getLeshanClient(List<ObjectModel> models) {
 
         ObjectsInitializer objectsInitializer = getObjectInitializer(models);
@@ -138,7 +149,10 @@ public abstract class DeviceBase {
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = new ObjectsInitializer(new LwM2mModel(models));
 
-        initializer.setInstancesForObject(SECURITY, noSec(getServerUrl() + ":" + getServerPort(), 123));
+        if (this.isBootstrap)
+            initializer.setInstancesForObject(SECURITY, noSecBootstap(getServerUrl() + ":" + getServerPort()));
+        else initializer.setInstancesForObject(SECURITY, noSec(getServerUrl() + ":" + getServerPort(), 123));
+
         initializer.setInstancesForObject(SERVER, new Server(123, getLifetime(), BindingMode.U, false));
         initializer.setInstancesForObject(DEVICE, new DeviceObject(name, deviceDto.getBatteryStatus(), deviceDto.getBatteryLevel()));
 
