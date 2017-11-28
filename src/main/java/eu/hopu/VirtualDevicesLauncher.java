@@ -12,7 +12,7 @@ public class VirtualDevicesLauncher {
     public static void main(String[] args) throws IOException {
 
         String path = (args.length == 0) ? "src/main/resources/" : "opt/lwm2m-iotagent-client/lib/";
-        JsonArray jsonDevices = new GetJsonArrayFromFile(path + "smart_spots.json").execute();
+        JsonArray jsonDevices = new GetJsonArrayFromFile(path + "smart_sdk.json").execute();
 
         List<DeviceBase> devices = new GetDevicesFromJsonObjects(jsonDevices).execute();
         List<LeshanClient> leshanClients = new GetLeshanClients(devices, path + "objectSpecs/objectspec_debug.json").execute();

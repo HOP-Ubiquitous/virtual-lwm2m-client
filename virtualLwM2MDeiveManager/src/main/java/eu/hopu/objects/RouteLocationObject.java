@@ -43,6 +43,8 @@ public class RouteLocationObject extends LocationObject {
 
         timer = new Timer("Route Timer");
         myTimerTask = new MyTimerTask(this);
+
+        toggleRouteStatus();
     }
 
 
@@ -57,18 +59,6 @@ public class RouteLocationObject extends LocationObject {
             }
         }
         return readResponse;
-    }
-
-
-    @Override
-    public ExecuteResponse execute(int resourceid, String params) {
-        switch (resourceid) {
-            case TOGGLE_ROUTE_STATUS:
-                toggleRouteStatus();
-                return ExecuteResponse.success();
-        }
-
-        return super.execute(resourceid, params);
     }
 
     private void toggleRouteStatus() {

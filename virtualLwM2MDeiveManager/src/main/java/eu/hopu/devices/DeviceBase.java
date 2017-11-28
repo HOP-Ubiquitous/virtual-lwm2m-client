@@ -5,6 +5,7 @@ import eu.hopu.dto.DeviceDto;
 import eu.hopu.dto.LocationDto;
 import eu.hopu.objects.DeviceObject;
 import eu.hopu.objects.LocationObject;
+import eu.hopu.objects.RouteLocationObject;
 import org.eclipse.leshan.client.californium.LeshanClient;
 import org.eclipse.leshan.client.californium.LeshanClientBuilder;
 import org.eclipse.leshan.client.object.Server;
@@ -143,9 +144,24 @@ public abstract class DeviceBase {
 
         LocationDto location = getLocation();
         if (location != null)
-            initializer.setInstancesForObject(LOCATION, new LocationObject(location.getLatitude(), location.getLongitude(), location.getAltitude()));
+            initLocationObject(initializer, location);
 
         return initializer;
+    }
+
+    private void initLocationObject(ObjectsInitializer initializer, LocationDto location) {
+        if (location.hasRoute() && location.getRoute().size() > 0)
+            initializer.setInstancesForObject(LOCATION,
+                    new RouteLocationObject(
+                            location.getLatitude(),
+                            location.getLongitude(),
+                            location.getAltitude(),
+                            location.getRoute().get(0).getLatitude(),
+                            location.getRoute().get(0).getLongitude()
+                    )
+            );
+        else
+            initializer.setInstancesForObject(LOCATION, new LocationObject(location.getLatitude(), location.getLongitude(), location.getAltitude()));
     }
 
     abstract List<LwM2mObjectEnabler> getDeviceEnabledObjects(ObjectsInitializer objectsInitializer);

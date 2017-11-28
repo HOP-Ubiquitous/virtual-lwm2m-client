@@ -12,9 +12,6 @@ public class RouteLocationObjectTest {
     private static final int LONGITUDE = 1;
     private static final int LATITUDE = 0;
 
-    // Point A: 19.42422 , -99.13322
-    // Point B: 19.36, -99.143
-
     private static final String LOCATION_WITH_ROUTE = "" +
             "{\n" +
             "       \"latitude\": 19.42422,\n" +
@@ -48,13 +45,13 @@ public class RouteLocationObjectTest {
                 locationDto.getRoute().get(0).getLongitude());
 
         double latitude = (double) utilsGetLwM2MValues.getResourceValue(routeLocationObject, LATITUDE);
-
-        routeLocationObject.execute(RouteLocationObject.TOGGLE_ROUTE_STATUS, "");
+        double longitude = (double) utilsGetLwM2MValues.getResourceValue(routeLocationObject, LATITUDE);
         Thread.sleep(5000);
-
         double newLatitude = (double) utilsGetLwM2MValues.getResourceValue(routeLocationObject, LATITUDE);
+        double newLongitude = (double) utilsGetLwM2MValues.getResourceValue(routeLocationObject, LATITUDE);
 
         assertNotEquals(latitude, newLatitude);
+        assertNotEquals(longitude, newLongitude);
     }
 
 
