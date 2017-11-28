@@ -3,6 +3,7 @@
     "name": "HOPf4b85eab9b1c",
     "serverUrl": "coap://homard.hopu.eu",
     "serverPort": "5683",
+    "isBootstrap": true,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
