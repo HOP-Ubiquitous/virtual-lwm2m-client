@@ -3,6 +3,7 @@ package eu.hopu;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import eu.hopu.devices.DeviceBase;
+import eu.hopu.devices.DeviceJsonDefinitionsUtils;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +22,7 @@ public class GetDevicesFromJsonObjectsTest {
     }
 
     @Test
-    public void given_a_not_found_model_return_a_null_device() throws Exception{
+    public void given_a_not_found_model_return_a_null_device() throws Exception {
         JsonArray jsonArray = (JsonArray) jsonParser.parse("[\n" +
                 "  {\n" +
                 "    \"name\": \"HOP010203040506\",\n" +
@@ -45,20 +46,7 @@ public class GetDevicesFromJsonObjectsTest {
     @Test
     public void given_a_json_device_array_returns_a_device_list() throws Exception {
         JsonArray jsonArray = (JsonArray) jsonParser.parse("[\n" +
-                "  {\n" +
-                "    \"name\": \"HOP010203040506\",\n" +
-                "    \"serverUrl\": \"coap://glueandblue.com\",\n" +
-                "    \"serverPort\": \"5683\",\n" +
-                "    \"lifetime\": 30,\n" +
-                "    \"device\": {\n" +
-                "      \"batteryStatus\": 0,\n" +
-                "      \"batteryLevel\": 100,\n" +
-                "      \"model\": \"SmartSpot\"\n" +
-                "    },\n" +
-                "    \"localAddress\": \"0.0.0.0\",\n" +
-                "    \"localPort\": 1234\n" +
-                "  }\n" +
-                "]");
+                DeviceJsonDefinitionsUtils.getSmartSpotDefinition() + "]");
 
         ArrayList<DeviceBase> devicesBase = new GetDevicesFromJsonObjects(jsonArray).execute();
         assertEquals(1, devicesBase.size());

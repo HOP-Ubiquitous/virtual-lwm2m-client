@@ -12,6 +12,10 @@ import org.slf4j.LoggerFactory;
 public class SmartSpotObject extends BaseInstanceEnabler {
 
     private static final Logger LOG = LoggerFactory.getLogger(DeviceObject.class);
+
+    public static final int ID = 10000;
+    public static final String PATH = "10000.xml";
+
     private String url;
 
     public SmartSpotObject(String url) {

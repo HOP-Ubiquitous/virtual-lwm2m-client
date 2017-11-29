@@ -58,6 +58,5 @@ public class SmartSportTest {
         assertEquals("http://laperalimonera.com", smartSpot.getPhysicalUrl());
         assertTrue(smartSpot.hasCrowdMonitoring());
         assertEquals(smartSpot.getLocalAddress(), "0.0.0.0");
-        assertEquals(smartSpot.getLocalPort(), 40000);
     }
 }

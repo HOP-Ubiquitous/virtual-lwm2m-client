@@ -16,32 +16,16 @@ public class GetLeshanClients {
     private final static Logger LOGGER = Logger.getLogger(GetLeshanClients.class.getName());
 
     private List<DeviceBase> devices;
-    private String objectSpecPath;
 
-
-    public GetLeshanClients(List<DeviceBase> devices, String objectSpecPath) {
+    public GetLeshanClients(List<DeviceBase> devices) {
         this.devices = devices;
-        this.objectSpecPath = objectSpecPath;
     }
 
     public List<LeshanClient> execute() {
-
-        try {
-            List<ObjectModel> models = ObjectLoader.loadJsonStream(new FileInputStream(objectSpecPath));
-            return getLeshanClientsfromDevices(models);
-        } catch (FileNotFoundException e) {
-            LOGGER.warning("ObjectSpec File NOT FOUND Returning Empty LeshanClients");
-            e.printStackTrace();
-        }
-
-        return new ArrayList<>();
-    }
-
-    private List<LeshanClient> getLeshanClientsfromDevices(List<ObjectModel> models) {
         List<LeshanClient> leshanClients = new ArrayList<>();
 
         for (DeviceBase device : devices)
-            leshanClients.add(device.getLeshanClient(models));
+            leshanClients.add(device.getLeshanClient());
 
         return leshanClients;
     }

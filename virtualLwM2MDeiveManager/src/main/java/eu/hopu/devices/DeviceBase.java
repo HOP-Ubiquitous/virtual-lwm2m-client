@@ -3,15 +3,14 @@ package eu.hopu.devices;
 
 import eu.hopu.dto.DeviceDto;
 import eu.hopu.dto.LocationDto;
-import eu.hopu.objects.DeviceObject;
-import eu.hopu.objects.LocationObject;
-import eu.hopu.objects.RouteLocationObject;
+import eu.hopu.objects.*;
 import org.eclipse.leshan.client.californium.LeshanClient;
 import org.eclipse.leshan.client.californium.LeshanClientBuilder;
 import org.eclipse.leshan.client.object.Server;
 import org.eclipse.leshan.client.resource.LwM2mObjectEnabler;
 import org.eclipse.leshan.client.resource.ObjectsInitializer;
 import org.eclipse.leshan.core.model.LwM2mModel;
+import org.eclipse.leshan.core.model.ObjectLoader;
 import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.BindingMode;
 
@@ -32,7 +31,7 @@ public abstract class DeviceBase {
         }
     };
 
-    public static int DEVICE_PORT = 40000;
+    private static int DEVICE_PORT = 40000;
 
     private String name;
     private String serverUrl;
@@ -45,6 +44,18 @@ public abstract class DeviceBase {
 
     private boolean isBootstrap;
 
+    private static List<ObjectModel> models = ObjectLoader.loadDefault();
+
+    static {
+        models.addAll(ObjectLoader.loadDdfResources("/models", new String[]{
+                IpsoTemperatureObject.PATH,
+                IpsoHumidityObject.PATH,
+                IpsoLoudnessObject.PATH,
+                IpsoConcentrationObject.PATH,
+                SmartSpotObject.PATH,
+                NearWifiDevicesObject.PATH
+        }));
+    }
 
     public DeviceBase() {
     }
@@ -134,7 +145,7 @@ public abstract class DeviceBase {
         isBootstrap = bootstrap;
     }
 
-    public LeshanClient getLeshanClient(List<ObjectModel> models) {
+    public LeshanClient getLeshanClient() {
 
         ObjectsInitializer objectsInitializer = getObjectInitializer(models);
         List<LwM2mObjectEnabler> enablers = getDeviceEnabledObjects(objectsInitializer);
@@ -147,13 +158,16 @@ public abstract class DeviceBase {
     }
 
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
-        ObjectsInitializer initializer = new ObjectsInitializer(new LwM2mModel(models));
 
-        if (this.isBootstrap)
+        ObjectsInitializer initializer = new ObjectsInitializer(new LwM2mModel(DeviceBase.models));
+
+        if (isBootstrap)
             initializer.setInstancesForObject(SECURITY, noSecBootstap(getServerUrl() + ":" + getServerPort()));
-        else initializer.setInstancesForObject(SECURITY, noSec(getServerUrl() + ":" + getServerPort(), 123));
+        else {
+            initializer.setInstancesForObject(SECURITY, noSec(getServerUrl() + ":" + getServerPort(), 123));
+            initializer.setInstancesForObject(SERVER, new Server(123, getLifetime(), BindingMode.U, false));
+        }
 
-        initializer.setInstancesForObject(SERVER, new Server(123, getLifetime(), BindingMode.U, false));
         initializer.setInstancesForObject(DEVICE, new DeviceObject(name, deviceDto.getBatteryStatus(), deviceDto.getBatteryLevel()));
 
         LocationDto location = getLocation();

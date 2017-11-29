@@ -1,101 +1,26 @@
 [
   {
-    "name": "HOP000000000001",
+    "name": "HOP100000000000",
     "serverUrl": "coap://glueandblue.com",
     "serverPort": "5683",
-    "lifetime": 0,
-    "device": {
-      "model": "SmartSpot",
-      "batteryStatus": 0,
-      "batteryLevel": 99,
-      "location": {
-        "latitude": 19.42422,
-        "longitude": -99.13322,
-        "altitude": 1,
-        "route": [
-          {
-            "latitude": 19.36,
-            "longitude": -99.143,
-            "altitude": 1
-          }
-        ]
-      },
-      "temperatures": [
-        {
-          "maxValue": 25,
-          "minValue": 19,
-          "sensorValue": 22
-        },
-        {
-          "maxValue": 27,
-          "minValue": 19,
-          "sensorValue": 22
-        }
-      ],
-      "humidities": [
-        {
-          "maxValue": 60,
-          "minValue": 30,
-          "sensorValue": 45
-        },
-        {
-          "maxValue": 60,
-          "minValue": 30,
-          "sensorValue": 42
-        }
-      ],
-      "loudness": {
-        "maxValue": 20,
-        "minValue": 10,
-        "sensorValue": 15
-      },
-      "gasses": [
-        {
-          "maxValue": 19,
-          "minValue": 0,
-          "sensorValue": 6
-        },
-        {
-          "maxValue": 52,
-          "minValue": 0,
-          "sensorValue": 17
-        },
-        {
-          "maxValue": 56,
-          "minValue": 0,
-          "sensorValue": 21
-        },
-        {
-          "maxValue": 100,
-          "minValue": 0,
-          "sensorValue": 40
-        },
-        {
-          "maxValue": 10,
-          "minValue": 0,
-          "sensorValue": 2
-        }
-      ],
-      "physicalUrl": "http://laperalimonera.com",
-      "crowdMonitoring": true,
-      "localAddress": "0.0.0.0",
-      "localPort": 1234
-    }
-  },
-  {
-    "name": "HOP000000000002",
-    "serverUrl": "coap://glueandblue.com",
-    "serverPort": "5683",
+    "isBootstrap": true,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
-      "batteryLevel": 55
+      "batteryLevel": 99
     },
     "location": {
-      "latitude": 19.2908217,
-      "longitude": -99.1634128,
-      "altitude": 1
+      "latitude": 19.42422,
+      "longitude": -99.13322,
+      "altitude": 1,
+      "route": [
+        {
+          "latitude": 19.36,
+          "longitude": -99.143,
+          "altitude": 1
+        }
+      ]
     },
     "temperatures": [
       {
@@ -154,84 +79,160 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1235
-  },
-  {
-    "name": "HOP000000000003",
-    "serverUrl": "coap://glueandblue.com",
-    "serverPort": "5683",
-    "lifetime": 30,
-    "device": {
-      "model": "SmartSpot",
-      "batteryStatus": 0,
-      "batteryLevel": 55
-    },
-    "location": {
-      "latitude": 19.2908217,
-      "longitude": -99.1634128,
-      "altitude": 1
-    },
-    "temperatures": [
-      {
-        "maxValue": 25,
-        "minValue": 19,
-        "sensorValue": 22
-      },
-      {
-        "maxValue": 27,
-        "minValue": 19,
-        "sensorValue": 22
-      }
-    ],
-    "humidities": [
-      {
-        "maxValue": 60,
-        "minValue": 30,
-        "sensorValue": 45
-      },
-      {
-        "maxValue": 60,
-        "minValue": 30,
-        "sensorValue": 42
-      }
-    ],
-    "loudness": {
-      "maxValue": 20,
-      "minValue": 10,
-      "sensorValue": 15
-    },
-    "gasses": [
-      {
-        "maxValue": 19,
-        "minValue": 0,
-        "sensorValue": 6
-      },
-      {
-        "maxValue": 52,
-        "minValue": 0,
-        "sensorValue": 17
-      },
-      {
-        "maxValue": 56,
-        "minValue": 0,
-        "sensorValue": 21
-      },
-      {
-        "maxValue": 100,
-        "minValue": 0,
-        "sensorValue": 40
-      },
-      {
-        "maxValue": 10,
-        "minValue": 0,
-        "sensorValue": 2
-      }
-    ],
-    "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1236
+    "crowdMonitoring": true
   }
+//  {
+//    "name": "HOP000000000002",
+//    "serverUrl": "coap://glueandblue.com",
+//    "serverPort": "5683",
+//    "isBootstrap": true,
+//    "lifetime": 30,
+//    "device": {
+//      "model": "SmartSpot",
+//      "batteryStatus": 0,
+//      "batteryLevel": 55
+//    },
+//    "location": {
+//      "latitude": 19.2908217,
+//      "longitude": -99.1634128,
+//      "altitude": 1
+//    },
+//    "temperatures": [
+//      {
+//        "maxValue": 25,
+//        "minValue": 19,
+//        "sensorValue": 22
+//      },
+//      {
+//        "maxValue": 27,
+//        "minValue": 19,
+//        "sensorValue": 22
+//      }
+//    ],
+//    "humidities": [
+//      {
+//        "maxValue": 60,
+//        "minValue": 30,
+//        "sensorValue": 45
+//      },
+//      {
+//        "maxValue": 60,
+//        "minValue": 30,
+//        "sensorValue": 42
+//      }
+//    ],
+//    "loudness": {
+//      "maxValue": 20,
+//      "minValue": 10,
+//      "sensorValue": 15
+//    },
+//    "gasses": [
+//      {
+//        "maxValue": 19,
+//        "minValue": 0,
+//        "sensorValue": 6
+//      },
+//      {
+//        "maxValue": 52,
+//        "minValue": 0,
+//        "sensorValue": 17
+//      },
+//      {
+//        "maxValue": 56,
+//        "minValue": 0,
+//        "sensorValue": 21
+//      },
+//      {
+//        "maxValue": 100,
+//        "minValue": 0,
+//        "sensorValue": 40
+//      },
+//      {
+//        "maxValue": 10,
+//        "minValue": 0,
+//        "sensorValue": 2
+//      }
+//    ],
+//    "physicalUrl": "http://laperalimonera.com",
+//    "crowdMonitoring": true,
+//    "localAddress": "0.0.0.0",
+//    "localPort": 1235
+//  },
+//  {
+//    "name": "HOP000000000003",
+//    "serverUrl": "coap://glueandblue.com",
+//    "serverPort": "5683",
+//    "isBootstrap": true,
+//    "lifetime": 30,
+//    "device": {
+//      "model": "SmartSpot",
+//      "batteryStatus": 0,
+//      "batteryLevel": 55
+//    },
+//    "location": {
+//      "latitude": 19.2908217,
+//      "longitude": -99.1634128,
+//      "altitude": 1
+//    },
+//    "temperatures": [
+//      {
+//        "maxValue": 25,
+//        "minValue": 19,
+//        "sensorValue": 22
+//      },
+//      {
+//        "maxValue": 27,
+//        "minValue": 19,
+//        "sensorValue": 22
+//      }
+//    ],
+//    "humidities": [
+//      {
+//        "maxValue": 60,
+//        "minValue": 30,
+//        "sensorValue": 45
+//      },
+//      {
+//        "maxValue": 60,
+//        "minValue": 30,
+//        "sensorValue": 42
+//      }
+//    ],
+//    "loudness": {
+//      "maxValue": 20,
+//      "minValue": 10,
+//      "sensorValue": 15
+//    },
+//    "gasses": [
+//      {
+//        "maxValue": 19,
+//        "minValue": 0,
+//        "sensorValue": 6
+//      },
+//      {
+//        "maxValue": 52,
+//        "minValue": 0,
+//        "sensorValue": 17
+//      },
+//      {
+//        "maxValue": 56,
+//        "minValue": 0,
+//        "sensorValue": 21
+//      },
+//      {
+//        "maxValue": 100,
+//        "minValue": 0,
+//        "sensorValue": 40
+//      },
+//      {
+//        "maxValue": 10,
+//        "minValue": 0,
+//        "sensorValue": 2
+//      }
+//    ],
+//    "physicalUrl": "http://laperalimonera.com",
+//    "crowdMonitoring": true,
+//    "localAddress": "0.0.0.0",
+//    "localPort": 1236
+//  }
 ]

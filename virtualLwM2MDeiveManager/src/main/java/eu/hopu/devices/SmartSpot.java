@@ -34,7 +34,7 @@ public class SmartSpot extends DeviceBase {
     }
 
     public SmartSpot(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, List<SensorDto> temperatures, List<SensorDto> humidities, SensorDto loudness, List<SensorDto> gasses, String physicalUrl, boolean crowdMonitoring, Boolean isBootstrap) {
-        super(name, serverUrl, serverPort, lifetime, device, location,isBootstrap);
+        super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap);
         this.temperatures = temperatures;
         this.humidities = humidities;
         this.loudness = loudness;
@@ -46,7 +46,8 @@ public class SmartSpot extends DeviceBase {
     public SmartSpot(JsonObject jsonDevice) {
         this(
                 jsonDevice.get("name").getAsString(), jsonDevice.get("serverUrl").getAsString(),
-                jsonDevice.get("serverPort").getAsString(), jsonDevice.get("lifetime").getAsInt(),
+                jsonDevice.get("serverPort").getAsString(),
+                jsonDevice.get("lifetime").getAsInt(),
                 gson.fromJson(jsonDevice.get("device"), DeviceDto.class),
                 gson.fromJson(jsonDevice.get("location"), LocationDto.class),
                 (List<SensorDto>) gson.fromJson(
@@ -139,7 +140,7 @@ public class SmartSpot extends DeviceBase {
                         temperature.getSensorValue()
                 );
             }
-            initializer.setInstancesForObject(3303, ipsoTemp);
+            initializer.setInstancesForObject(IpsoTemperatureObject.ID, ipsoTemp);
         }
 
         List<SensorDto> humidities = getHumidities();
@@ -186,7 +187,14 @@ public class SmartSpot extends DeviceBase {
 
     @Override
     List<LwM2mObjectEnabler> getDeviceEnabledObjects(ObjectsInitializer objectsInitializer) {
-        return objectsInitializer.create(SECURITY, SERVER, DEVICE, LOCATION, 3303, 3304, 3324, 3325, 10000, 10001);
+        return objectsInitializer.create(SECURITY, SERVER, DEVICE,
+                IpsoTemperatureObject.ID,
+                IpsoHumidityObject.ID,
+                IpsoLoudnessObject.ID,
+                IpsoConcentrationObject.ID,
+                SmartSpotObject.ID,
+                NearWifiDevicesObject.ID,
+                LOCATION);
     }
 
     @Override

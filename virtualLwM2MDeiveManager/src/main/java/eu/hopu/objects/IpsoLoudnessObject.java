@@ -12,6 +12,9 @@ import java.util.TimerTask;
 
 public class IpsoLoudnessObject extends BaseInstanceEnabler {
 
+    public static final int ID = 3324;
+    public static final String PATH = "3324.xml";
+
     private static final Random RANDOM = new Random();
     private final double maxValue;
     private double minValue;

@@ -26,23 +26,13 @@ public class GetLeshanClientsFromDeviceTest {
         jsonSmartSpotObj = (JsonObject) jsonParser.parse(DeviceJsonDefinitionsUtils.getSmartSpotDefinition());
     }
 
-    @Test
-    public void given_a_object_spect_bad_path_return_a_empty_list() throws Exception {
-        List<DeviceBase> devices = new ArrayList<>();
-        devices.add(new FortikaDevice());
-
-        List<LeshanClient> leshanClients = new GetLeshanClients(devices, "bad path").execute();
-
-        assertEquals(0, leshanClients.size());
-    }
-
 
     @Test
     public void given_a_device_list_return_a_leshan_client_list() throws Exception {
         List<DeviceBase> devices = new ArrayList<>();
         devices.add(new SmartSpot(jsonSmartSpotObj));
 
-        List<LeshanClient> leshanClients = new GetLeshanClients(devices, PATH + "objectspec_test.json").execute();
+        List<LeshanClient> leshanClients = new GetLeshanClients(devices).execute();
 
         assertEquals(devices.size(), leshanClients.size());
     }

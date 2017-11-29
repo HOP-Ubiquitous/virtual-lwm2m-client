@@ -15,7 +15,7 @@ public class VirtualDevicesLauncher {
         JsonArray jsonDevices = new GetJsonArrayFromFile(path + "smart_sdk.json").execute();
 
         List<DeviceBase> devices = new GetDevicesFromJsonObjects(jsonDevices).execute();
-        List<LeshanClient> leshanClients = new GetLeshanClients(devices, path + "objectSpecs/objectspec_debug.json").execute();
+        List<LeshanClient> leshanClients = new GetLeshanClients(devices).execute();
 
         new StartLeshanClients(leshanClients).execute();
         new ShutdownHookDestroyLeshanClients(leshanClients, true).execute();

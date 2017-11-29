@@ -16,6 +16,9 @@ public class IpsoTemperatureObject extends BaseInstanceEnabler {
 
     private static final Logger LOG = LoggerFactory.getLogger(DeviceObject.class);
 
+    public static final int ID = 3303;
+    public static final String PATH = "3303.xml";
+
     private static final Random RANDOM = new Random();
     private final double maxValue;
     private double minValue;

@@ -8,6 +8,7 @@
     <artifactId>virtualLwM2MDeiveManager</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+
     <build>
         <plugins>
             <plugin>
@@ -21,6 +22,12 @@
         </plugins>
     </build>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <californium.version>2.0.0-M5</californium.version>
+        <log4j.version>2.1</log4j.version>
+        <slf4j.api.version>1.7.10</slf4j.api.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -43,17 +50,17 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.25</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-simple</artifactId>-->
+            <!--<version>1.7.25</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>slf4j-api</artifactId>-->
+            <!--<version>1.7.25</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>

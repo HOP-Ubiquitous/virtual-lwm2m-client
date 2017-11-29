@@ -18,6 +18,13 @@ public class DeviceObject extends BaseInstanceEnabler {
     private final int batteryStatus;
     private int batteryLevel;
 
+
+    public DeviceObject() {
+        this.name = "HOP100000000000";
+        this.batteryStatus = 100;
+        this.batteryLevel = 99;
+    }
+
     public DeviceObject(String name, int batteryStatus, int batteryLevel) {
         this.name = name;
         this.batteryStatus = batteryStatus;

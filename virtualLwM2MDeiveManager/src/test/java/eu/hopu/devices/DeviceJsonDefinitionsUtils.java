@@ -8,6 +8,7 @@ public class DeviceJsonDefinitionsUtils {
                 "{\n" +
                 "   \"name\": \"HOP010203040506\",\n" +
                 "   \"serverUrl\": \"coap://glueandblue.com\",\n" +
+                "   \"isBootstrap\": \"false\",\n" +
                 "   \"serverPort\": \"5683\",\n" +
                 "   \"lifetime\": 30,\n" +
                 "   \"device\": {\n" +

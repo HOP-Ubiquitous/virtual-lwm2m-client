@@ -29,7 +29,7 @@ public class StartLeshanClientsTest {
         List<DeviceBase> devices = new ArrayList<>();
         devices.add(new SmartSpot(jsonSmartSpotObj));
 
-        List<LeshanClient> leshanClients = new GetLeshanClients(devices, PATH + "objectspec_test.json").execute();
+        List<LeshanClient> leshanClients = new GetLeshanClients(devices).execute();
         new StartLeshanClients(leshanClients).execute();
     }
 

@@ -14,6 +14,9 @@ public class NearWifiDevicesObject extends BaseInstanceEnabler {
 
     private static final Random RANDOM = new Random();
 
+    public static final int ID = 10001;
+    public static final String PATH = "10001.xml";
+
     public NearWifiDevicesObject() {
         Timer timer = new Timer("Near wifi devices");
         timer.schedule(new TimerTask() {
