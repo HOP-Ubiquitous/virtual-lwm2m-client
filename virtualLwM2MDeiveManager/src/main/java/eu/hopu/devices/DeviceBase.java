@@ -14,6 +14,8 @@ import org.eclipse.leshan.core.model.ObjectLoader;
 import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.BindingMode;
 
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,17 +46,14 @@ public abstract class DeviceBase {
 
     private boolean isBootstrap;
 
-    private static List<ObjectModel> models = ObjectLoader.loadDefault();
+    private static List<ObjectModel> models;
 
     static {
-        models.addAll(ObjectLoader.loadDdfResources("/models", new String[]{
-                IpsoTemperatureObject.PATH,
-                IpsoHumidityObject.PATH,
-                IpsoLoudnessObject.PATH,
-                IpsoConcentrationObject.PATH,
-                SmartSpotObject.PATH,
-                NearWifiDevicesObject.PATH
-        }));
+        try (InputStream stream = LeshanClient.class.getClassLoader().getResourceAsStream("objectspec/objectspec.json")) {
+            models = ObjectLoader.loadJsonStream(stream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public DeviceBase() {

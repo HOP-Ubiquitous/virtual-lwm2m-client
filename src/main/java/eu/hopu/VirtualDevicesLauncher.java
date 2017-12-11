@@ -2,6 +2,7 @@ package eu.hopu;
 
 import com.google.gson.JsonArray;
 import eu.hopu.devices.DeviceBase;
+import org.eclipse.californium.core.network.Endpoint;
 import org.eclipse.leshan.client.californium.LeshanClient;
 
 import java.io.IOException;

@@ -13,6 +13,7 @@ import java.util.List;
 public class LocationObject extends BaseInstanceEnabler {
 
     public static final int LATITUDE = 0;
+    public static final int LONGITUDE = 1;
     private float latitude;
     private float longitude;
     private float altitude;
@@ -28,10 +29,11 @@ public class LocationObject extends BaseInstanceEnabler {
 
     @Override
     public ReadResponse read(int resourceid) {
+        System.out.println("Res: " + resourceid);
         switch (resourceid) {
             case LATITUDE:
                 return ReadResponse.success(resourceid, getLatitude());
-            case 1:
+            case LONGITUDE:
                 return ReadResponse.success(resourceid, getLongitude());
             case 2:
                 return ReadResponse.success(resourceid, getAltitude());
