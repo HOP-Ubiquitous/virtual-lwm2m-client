@@ -8,107 +8,12 @@
     <artifactId>lwm2miotagentclient</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <modules>
-        <module>jsonInputReader</module>
-        <module>virtualLwM2MDeiveManager</module>
-    </modules>
-
     <packaging>pom</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.directory>target/</project.build.directory>
-        <project.build.finalName>${project.artifactId}</project.build.finalName>
-        <maven.version>3.3.9</maven.version>
-        <java.version>1.8</java.version>
-        <staging.host>staging.hopu.eu:4243</staging.host>
-        <staging.host.wiht.schema>http://staging.hopu.eu:4243</staging.host.wiht.schema>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>eu.hopu.virtualLwM2MDeiveManager</groupId>
-            <artifactId>virtualLwM2MDeiveManager</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>eu.hopu.jsonInputReader</groupId>
-            <artifactId>jsonInputReader</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.2</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.13</version>
-                <executions>
-                    <execution>
-                        <id>build-image</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>
-                                build
-                            </goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <imageName>${project.artifactId}:latest</imageName>
-                    <dockerHost>${staging.host.wiht.schema}</dockerHost>
-                    <dockerDirectory>docker-dir/</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}-jar-with-dependencies.jar</include>
-                        </resource>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>./src/main/resources</directory>
-                            <include>objectspec_debug.json</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <id>delete-docker-unused-images</id>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <executable>docker</executable>
-                    <arguments>
-                        <argument>-H</argument>
-                        <argument>${staging.host}</argument>
-                        <argument>image</argument>
-                        <argument>prune</argument>
-                        <argument>--force</argument>
-                    </arguments>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <module>jsonInputReader</module>
+        <module>virtualLwM2MDeviceManager</module>
+        <module>virtualDeviceLauncher</module>
+    </modules>
 
 </project>

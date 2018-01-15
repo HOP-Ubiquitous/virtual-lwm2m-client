@@ -1,0 +1,67 @@
+[
+  {
+    "name": "HOP100000000000",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 15,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 99
+    },
+    "location": {
+      "latitude": 19.42422,
+      "longitude": -99.13322,
+      "altitude": 1
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true
+  }
+]

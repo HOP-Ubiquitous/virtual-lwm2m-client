@@ -4,22 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.hopu.virtualLwM2MDeiveManager</groupId>
-    <artifactId>virtualLwM2MDeiveManager</artifactId>
+    <groupId>eu.hopu.virtualLwM2MDeviceManager</groupId>
+    <artifactId>virtualLwM2MDeviceManager</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,12 +15,29 @@
         <slf4j.api.version>1.7.10</slf4j.api.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>leshan-version-0.1.11-M9</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <leshan-version>0.1.11-M9</leshan-version>
+            </properties>
+        </profile>
+        <profile>
+            <id>leshan-version-LATEST</id>
+            <properties>
+                <leshan-version>LATEST</leshan-version>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.eclipse.leshan</groupId>
             <artifactId>leshan-client-cf</artifactId>
-            <version>LATEST</version>
-            <!--<version>0.1.11-M9</version>-->
+            <version>${leshan-version}</version>
         </dependency>
         <dependency>
             <groupId>commons-cli</groupId>
@@ -51,5 +55,19 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

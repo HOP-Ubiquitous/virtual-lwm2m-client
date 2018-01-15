@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eu.hopu.virtualDeviceLauncher</groupId>
+    <artifactId>virtualDeviceLauncher</artifactId>
+    <version>1.0</version>
+
+    <packaging>jar</packaging>
+
+    <properties>
+        <packaged-name>virtual-lwm2m-client</packaged-name>
+        <main-class-path>eu.hopu.VirtualDevicesLauncher</main-class-path>
+        <docker-registry>homard.hopu.eu:5001</docker-registry>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.directory>target/</project.build.directory>
+        <maven.version>3.3.9</maven.version>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>eu.hopu.virtualLwM2MDeviceManager</groupId>
+            <artifactId>virtualLwM2MDeviceManager</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.hopu.jsonInputReader</groupId>
+            <artifactId>jsonInputReader</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+
+    <profiles>
+
+        <!--LESHAN-VERSION-PROFILES-->
+        <profile>
+            <id>leshan-version-0.1.11-M9</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <leshan-version>0.11.1.9</leshan-version>
+                <image-name>${packaged-name}-${leshan-version}</image-name>
+            </properties>
+        </profile>
+        <profile>
+            <id>leshan-version-LATEST</id>
+            <properties>
+                <leshan-version>latest</leshan-version>
+                <image-name>${packaged-name}-${leshan-version}</image-name>
+            </properties>
+        </profile>
+
+        <!--GENERATE-JAR PROFILE-->
+        <profile>
+            <id>generate-jar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>${main-class-path}</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <finalName>${packaged-name}</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!--DOCKER-BUILD-PROFILE-->
+        <profile>
+            <id>docker-build</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.fabric8</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <version>0.23.0</version>
+                        <executions>
+                            <execution>
+                                <id>build-image</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <images>
+                                <image>
+                                    <name>${image-name}:develop</name>
+                                    <build>
+                                        <dockerFileDir>${project.basedir}</dockerFileDir>
+                                        <tags>latest</tags>
+                                        <filter>@</filter>
+                                    </build>
+                                </image>
+                            </images>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!--DOCKER-PUSH-PROFILE-->
+        <profile>
+            <id>docker-push</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.fabric8</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <version>0.23.0</version>
+                        <executions>
+                            <execution>
+                                <id>push-image</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>push</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <registry>${docker-registry}</registry>
+                            <images>
+                                <image>
+                                    <name>${image-name}:latest</name>
+                                </image>
+                            </images>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+</project>
