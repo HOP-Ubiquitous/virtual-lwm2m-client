@@ -1,14 +1,9 @@
 package eu.hopu.objects;
 
-import eu.hopu.dto.CoordinateDto;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
-import org.eclipse.leshan.core.node.LwM2mResource;
 import org.eclipse.leshan.core.response.ReadResponse;
-import org.eclipse.leshan.core.response.WriteResponse;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class LocationObject extends BaseInstanceEnabler {
 
