@@ -1,8 +1,8 @@
 [
   {
     "name": "HOP100000000000",
-    "serverUrl": "coap://leshan.eclipse.org",
-    "serverPort": "5683",
+    "serverUrl": "coap://192.168.1.193",
+    "serverPort": "5693",
     "isBootstrap": false,
     "lifetime": 15,
     "device": {

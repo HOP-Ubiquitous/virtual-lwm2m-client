@@ -4747,5 +4747,47 @@
         "description": "Reset service"
       }
     ]
+  },
+  {
+    "name": "SmartSpot Metadata",
+    "id": 30000,
+    "instancetype": "single",
+    "mandatory": false,
+    "description": "Include some information about the proprietary name and the place in which the device is deployed",
+    "resourcedefs": [
+      {
+        "id": 0,
+        "name": "Device Name",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "This resource specifies a non technical name for the device. It helps in frontend representations"
+      },
+      {
+        "id": 1,
+        "name": "Place Name",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "This resource stores the device location in a readable way"
+      },
+      {
+        "id": 2,
+        "name": "Image URL",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "This resource stores a url that will redirect us to the image of the site where the device has been deployed"
+      }
+    ]
   }
 ]
