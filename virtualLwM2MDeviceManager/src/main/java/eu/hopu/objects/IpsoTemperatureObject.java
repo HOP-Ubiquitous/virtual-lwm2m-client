@@ -34,6 +34,7 @@ public class IpsoTemperatureObject extends BaseInstanceEnabler {
             @Override
             public void run() {
                 fireResourcesChange(5700);
+                // TODO Actualizar attibuto temperature con value = getSensorValue()
             }
         }, 12000, 30000);
     }

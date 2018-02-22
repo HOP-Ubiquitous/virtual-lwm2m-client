@@ -34,6 +34,7 @@ public class IpsoHumidityObject extends BaseInstanceEnabler {
             @Override
             public void run() {
                 fireResourcesChange(5700);
+                // TODO Actualizar attibuto relativeHumidity con value = getSensorValue()
             }
         }, 11000, 30000);
     }

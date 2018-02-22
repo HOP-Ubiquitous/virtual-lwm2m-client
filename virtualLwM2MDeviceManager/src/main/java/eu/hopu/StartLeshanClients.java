@@ -14,7 +14,10 @@ public class StartLeshanClients {
 
 
     public void execute() {
-        for (LeshanClient client : leshanClients)
+        for (LeshanClient client : leshanClients) {
             client.start();
+            // TODO Inicializar nueva clase OrionRegistration pasando como parámetro client.getRegistrationId()
+            // Esta clase debe inicializar toda la estructura del data model con valores por defecto
+        }
     }
 }

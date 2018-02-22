@@ -34,6 +34,7 @@ public class IpsoConcentrationObject extends BaseInstanceEnabler {
             @Override
             public void run() {
                 fireResourcesChange(5700);
+                // TODO Actualizar attibuto de gas correspondiente con value = getSensorValue()
             }
         }, 5000, 30000);
     }

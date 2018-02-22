@@ -72,6 +72,7 @@ public class RouteLocationObject extends LocationObject {
     }
 
     private class MyTimerTask extends TimerTask {
+        // TODO Crear nueva clase OrionMyTimerTask en la que el método run modifique los valores de location
 
         LocationObject locationObject;
 
