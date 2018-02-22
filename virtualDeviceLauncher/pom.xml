@@ -12,6 +12,7 @@
 
     <properties>
         <packaged-name>virtual-lwm2m-client</packaged-name>
+        <image-name>virtual-lwm2m-client</image-name>
         <main-class-path>eu.hopu.VirtualDevicesLauncher</main-class-path>
         <docker-registry>homard.hopu.eu:5001</docker-registry>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,10 +1,12 @@
 [
   {
     "name": "Hop_Ubiquitous",
-    "serverUrl": "coap://164.132.112.218",
-    "serverPort": "5014",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -70,16 +72,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1234
+    "crowdMonitoring": true
   },
   {
     "name": "Ouka_leele",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -145,16 +147,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1235
+    "crowdMonitoring": true
   },
   {
     "name": "Ayuntamiento_de_Ceutí",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -220,16 +222,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1236
+    "crowdMonitoring": true
   },
   {
     "name": "La_Conservera",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -295,16 +297,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1237
+    "crowdMonitoring": true
   },
   {
     "name": "Parque_de_la_Constitución",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -370,16 +372,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1238
+    "crowdMonitoring": true
   },
   {
     "name": "Complejo_deportivo_Antonio_Peñalver",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -445,16 +447,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1239
+    "crowdMonitoring": true
   },
   {
     "name": "Ermita_de_San_Roque",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -520,16 +522,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1240
+    "crowdMonitoring": true
   },
   {
     "name": "Colegio_San_Roque",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -595,16 +597,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1241
+    "crowdMonitoring": true
   },
   {
     "name": "IES_Felipe_de_Borbón",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -670,16 +672,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1242
+    "crowdMonitoring": true
   },
   {
     "name": "Residencia_San_Pablo",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -745,16 +747,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1243
+    "crowdMonitoring": true
   },
   {
     "name": "Auditorio_de_Ceutí",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -820,16 +822,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1244
+    "crowdMonitoring": true
   },
   {
     "name": "Colegio_Diego_Martínez_Rico",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -895,16 +897,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1245
+    "crowdMonitoring": true
   },
   {
     "name": "Parroquia_Sta._María_Magdalena",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -970,16 +972,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1246
+    "crowdMonitoring": true
   },
   {
     "name": "Colegio_Juan_Ayala_Hurtado",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -1045,16 +1047,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1247
+    "crowdMonitoring": true
   },
   {
     "name": "Colegio_Magda",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -1120,16 +1122,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1248
+    "crowdMonitoring": true
   },
   {
     "name": "Colegio_Los_Torraos",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -1195,16 +1197,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1249
+    "crowdMonitoring": true
   },
   {
     "name": "Cementerio",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -1270,16 +1272,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1250
+    "crowdMonitoring": true
   },
   {
     "name": "Polígono_Los_Torraos",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -1345,16 +1347,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1251
+    "crowdMonitoring": true
   },
   {
     "name": "Polígono_de_Ceutí",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -1420,16 +1422,16 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1252
+    "crowdMonitoring": true
   },
   {
     "name": "Parque_La_Tejera",
-    "serverUrl": "coap://127.0.0.1",
-    "serverPort": "5683",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
     "lifetime": 30,
     "device": {
+      "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
     },
@@ -1495,8 +1497,6 @@
       }
     ],
     "physicalUrl": "http://laperalimonera.com",
-    "crowdMonitoring": true,
-    "localAddress": "0.0.0.0",
-    "localPort": 1253
+    "crowdMonitoring": true
   }
 ]
