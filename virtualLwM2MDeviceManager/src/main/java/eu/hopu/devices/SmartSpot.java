@@ -137,7 +137,8 @@ public class SmartSpot extends DeviceBase {
                 ipsoTemp[index++] = new IpsoTemperatureObject(
                         temperature.getMaxValue(),
                         temperature.getMinValue(),
-                        temperature.getSensorValue()
+                        temperature.getSensorValue(),
+                        this.getName()
                 );
             }
             initializer.setInstancesForObject(IpsoTemperatureObject.ID, ipsoTemp);
@@ -151,7 +152,8 @@ public class SmartSpot extends DeviceBase {
                 ipsoHum[index++] = new IpsoHumidityObject(
                         humidity.getMaxValue(),
                         humidity.getMinValue(),
-                        humidity.getSensorValue()
+                        humidity.getSensorValue(),
+                        this.getName()
                 );
             }
             initializer.setInstancesForObject(3304, ipsoHum);
@@ -170,7 +172,9 @@ public class SmartSpot extends DeviceBase {
                 ipsoGasses[index++] = new IpsoConcentrationObject(
                         gas.getMaxValue(),
                         gas.getMinValue(),
-                        gas.getSensorValue()
+                        gas.getSensorValue(),
+                        this.getName(),
+                        IpsoConcentrationObject.Gas.getGasByNumber(index-1)
                 );
             }
             initializer.setInstancesForObject(3325, ipsoGasses);

@@ -152,7 +152,7 @@
                             <registry>${docker-registry}</registry>
                             <images>
                                 <image>
-                                    <name>${image-name}:latest</name>
+                                    <name>${image-name}:datamodel</name>
                                 </image>
                             </images>
                         </configuration>

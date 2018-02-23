@@ -13,14 +13,15 @@ public class LocationObject extends BaseInstanceEnabler {
     private float longitude;
     private float altitude;
     private Date timestamp;
+    private String name;
 
-    public LocationObject(float latitude, float longitude, float altitude) {
+    public LocationObject(float latitude, float longitude, float altitude,String name) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
         this.timestamp = new Date();
+        this.name = name;
     }
-
 
     @Override
     public ReadResponse read(int resourceid) {
@@ -77,4 +78,6 @@ public class LocationObject extends BaseInstanceEnabler {
     public int getSpeed() {
         return 0;
     }
+
+    public String getName(){return name;}
 }

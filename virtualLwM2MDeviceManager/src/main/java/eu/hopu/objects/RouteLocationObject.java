@@ -1,5 +1,6 @@
 package eu.hopu.objects;
 
+import eu.hopu.OrionRegistration;
 import org.eclipse.leshan.core.response.ExecuteResponse;
 import org.eclipse.leshan.core.response.ReadResponse;
 
@@ -25,9 +26,8 @@ public class RouteLocationObject extends LocationObject {
     private float endLatitude;
     private float endLongitude;
 
-
-    public RouteLocationObject(float startLatitude, float startLongitude, float altitude, float endLatitude, float endLongitude) {
-        super(startLatitude, startLongitude, altitude);
+    public RouteLocationObject(float startLatitude, float startLongitude, float altitude, float endLatitude, float endLongitude, String name) {
+        super(startLatitude, startLongitude, altitude,name);
 
         this.startLatitude = startLatitude;
         this.startLongitude = startLongitude;
@@ -84,6 +84,9 @@ public class RouteLocationObject extends LocationObject {
         public void run() {
             moveDevice();
             locationObject.fireResourcesChange(0, 1);
+            double coordinates[] = {locationObject.getLatitude(),locationObject.getLongitude()};
+            OrionRegistration.updateAttribute(locationObject.getName(),"location","coordinates",coordinates);
+
         }
 
         private void moveDevice() {

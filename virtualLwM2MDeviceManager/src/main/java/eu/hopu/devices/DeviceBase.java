@@ -184,11 +184,12 @@ public abstract class DeviceBase {
                             location.getLongitude(),
                             location.getAltitude(),
                             location.getRoute().get(0).getLatitude(),
-                            location.getRoute().get(0).getLongitude()
+                            location.getRoute().get(0).getLongitude(),
+                            this.getName()
                     )
             );
         else
-            initializer.setInstancesForObject(LOCATION, new LocationObject(location.getLatitude(), location.getLongitude(), location.getAltitude()));
+            initializer.setInstancesForObject(LOCATION, new LocationObject(location.getLatitude(), location.getLongitude(), location.getAltitude(),this.getName()));
     }
 
     abstract List<LwM2mObjectEnabler> getDeviceEnabledObjects(ObjectsInitializer objectsInitializer);

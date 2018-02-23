@@ -1,5 +1,6 @@
 package eu.hopu.objects;
 
+import eu.hopu.OrionRegistration;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
 import org.eclipse.leshan.core.node.LwM2mResource;
 import org.eclipse.leshan.core.response.ExecuteResponse;
@@ -24,7 +25,7 @@ public class IpsoHumidityObject extends BaseInstanceEnabler {
     private double minValue;
     private double sensorValue;
 
-    public IpsoHumidityObject(double maxValue, double minValue, double sensorValue) {
+    public IpsoHumidityObject(double maxValue, double minValue, double sensorValue, String name) {
         this.maxValue = maxValue;
         this.minValue = minValue;
         this.sensorValue = sensorValue;
@@ -34,7 +35,7 @@ public class IpsoHumidityObject extends BaseInstanceEnabler {
             @Override
             public void run() {
                 fireResourcesChange(5700);
-                // TODO Actualizar attibuto relativeHumidity con value = getSensorValue()
+                OrionRegistration.updateAttribute(name,"relativeHumidity",null,getSensorValue());
             }
         }, 11000, 30000);
     }

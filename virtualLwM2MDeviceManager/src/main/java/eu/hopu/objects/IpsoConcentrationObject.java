@@ -1,5 +1,6 @@
 package eu.hopu.objects;
 
+import eu.hopu.OrionRegistration;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
 import org.eclipse.leshan.core.node.LwM2mResource;
 import org.eclipse.leshan.core.response.ExecuteResponse;
@@ -24,7 +25,44 @@ public class IpsoConcentrationObject extends BaseInstanceEnabler {
     private double minValue;
     private double sensorValue;
 
-    public IpsoConcentrationObject(double maxValue, double minValue, double sensorValue) {
+    public enum Gas {
+        NO2, SO2, O3, H2S, CO;
+
+        public static Gas getGasByNumber(int number)  {
+            switch (number) {
+                case 0:
+                    return NO2;
+                case 1:
+                    return SO2;
+                case 2:
+                    return O3;
+                case 3:
+                    return H2S;
+                case 4:
+                    return CO;
+                default:
+                    return null;
+            }
+        }
+        public static String getNameByGas(Gas gas) {
+            switch (gas) {
+                case NO2:
+                    return "NO2";
+                case SO2:
+                    return "SO2";
+                case O3:
+                    return "O3";
+                case H2S:
+                    return "H2S";
+                case CO:
+                    return "CO";
+                default:
+                    return null;
+            }
+        }
+    }
+
+    public IpsoConcentrationObject(double maxValue, double minValue, double sensorValue,String name,Gas gas) {
         this.maxValue = maxValue;
         this.minValue = minValue;
         this.sensorValue = sensorValue;
@@ -34,7 +72,7 @@ public class IpsoConcentrationObject extends BaseInstanceEnabler {
             @Override
             public void run() {
                 fireResourcesChange(5700);
-                // TODO Actualizar attibuto de gas correspondiente con value = getSensorValue()
+                OrionRegistration.updateAttribute(name,Gas.getNameByGas(gas),null,getSensorValue());
             }
         }, 5000, 30000);
     }
