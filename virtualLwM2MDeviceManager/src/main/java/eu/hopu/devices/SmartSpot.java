@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import eu.hopu.dto.DeviceDto;
 import eu.hopu.dto.LocationDto;
+import eu.hopu.dto.MetadataDto;
 import eu.hopu.dto.SensorDto;
 import eu.hopu.objects.*;
 import org.eclipse.leshan.client.resource.LwM2mObjectEnabler;
@@ -27,13 +28,26 @@ public class SmartSpot extends DeviceBase {
     private List<SensorDto> gasses;
     private String physicalUrl;
     private boolean crowdMonitoring;
-
+    private MetadataDto metadata;
 
     public SmartSpot() {
         super();
     }
 
-    public SmartSpot(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, List<SensorDto> temperatures, List<SensorDto> humidities, SensorDto loudness, List<SensorDto> gasses, String physicalUrl, boolean crowdMonitoring, Boolean isBootstrap) {
+    public SmartSpot(String name,
+                     String serverUrl,
+                     String serverPort,
+                     int lifetime,
+                     DeviceDto device,
+                     LocationDto location,
+                     List<SensorDto> temperatures,
+                     List<SensorDto> humidities,
+                     SensorDto loudness,
+                     List<SensorDto> gasses,
+                     String physicalUrl,
+                     boolean crowdMonitoring,
+                     Boolean isBootstrap,
+                     MetadataDto metadata) {
         super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap);
         this.temperatures = temperatures;
         this.humidities = humidities;
@@ -41,6 +55,7 @@ public class SmartSpot extends DeviceBase {
         this.gasses = gasses;
         this.physicalUrl = physicalUrl;
         this.crowdMonitoring = crowdMonitoring;
+        this.metadata = metadata;
     }
 
     public SmartSpot(JsonObject jsonDevice) {
@@ -68,7 +83,8 @@ public class SmartSpot extends DeviceBase {
                 ),
                 jsonDevice.get("physicalUrl").getAsString(),
                 jsonDevice.get("crowdMonitoring").getAsBoolean(),
-                jsonDevice.get("isBootstrap").getAsBoolean()
+                jsonDevice.get("isBootstrap").getAsBoolean(),
+                gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class)
         );
     }
 
@@ -125,6 +141,9 @@ public class SmartSpot extends DeviceBase {
         this.crowdMonitoring = crowdMonitoring;
     }
 
+    public MetadataDto getMetadata() {return metadata;}
+
+    public void setMetadata(MetadataDto metadata) {this.metadata = metadata;}
 
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = super.getObjectInitializer(models);
@@ -182,6 +201,9 @@ public class SmartSpot extends DeviceBase {
         if (hasCrowdMonitoring())
             initializer.setInstancesForObject(10001, new NearWifiDevicesObject());
 
+        if (getMetadata() != null)
+            initializer.setInstancesForObject(32970, new MetadataObject(getName(), metadata.getPlace(), metadata.getImage()));
+
         return initializer;
     }
 
@@ -194,6 +216,7 @@ public class SmartSpot extends DeviceBase {
                 IpsoConcentrationObject.ID,
                 SmartSpotObject.ID,
                 NearWifiDevicesObject.ID,
+                MetadataObject.ID,
                 LOCATION);
     }
 
@@ -214,6 +237,8 @@ public class SmartSpot extends DeviceBase {
                 ", crowdMonitoring=" + crowdMonitoring +
                 ", localAddress='" + getLocalAddress() + '\'' +
                 ", localPort=" + getLocalPort() +
+                ", metadata=" + metadata +
                 '}';
     }
+
 }

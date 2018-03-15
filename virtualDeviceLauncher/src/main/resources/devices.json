@@ -1,14 +1,18 @@
 [
   {
-    "name": "Hop_Ubiquitous",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "hop-ubiquitous",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Hop Ubiquitous",
+      "image": "images/img-hop-ubiquitous.jpeg"
     },
     "location": {
       "latitude": 38.0770456,
@@ -61,19 +65,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Ouka_leele",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "ouka-leele",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Ouka leele",
+      "image": "images/img-ouka-leele.jpeg"
     },
     "location": {
       "latitude": 38.080720,
@@ -126,19 +134,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Ayuntamiento_de_Ceutí",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "ayuntamiento-ceuti",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Ayuntamiento de Ceutí",
+      "image": "images/img-ayuntamiento-ceuti.jpeg"
     },
     "location": {
       "latitude": 38.077750,
@@ -191,19 +203,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "La_Conservera",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "la-conservera",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "La Conservera",
+      "image": "images/img-la-conservera.jpeg"
     },
     "location": {
       "latitude": 38.079193,
@@ -256,19 +272,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Parque_de_la_Constitución",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "parque-de-la-constitucion",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Parque de la Constitución",
+      "image": "images/img-parque-de-la-constitucion.jpeg"
     },
     "location": {
       "latitude": 38.078285,
@@ -321,19 +341,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Complejo_deportivo_Antonio_Peñalver",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "complejo-deportivo-antonio-penalver",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Complejo deportivo Antonio Peñalver",
+      "image": "images/img-complejo-deportivo-antono-penalver"
     },
     "location": {
       "latitude": 38.082150,
@@ -386,19 +410,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Ermita_de_San_Roque",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "ermita-de-san-roque",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Ermita de San Roque",
+      "image": "images/img-ermita-de-san-roque.jpeg"
     },
     "location": {
       "latitude": 38.081941,
@@ -451,19 +479,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Colegio_San_Roque",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "colegio-san-roque",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Colegio San Roque",
+      "image": "images/img-colegio-san-roque.jpg"
     },
     "location": {
       "latitude": 38.080425,
@@ -516,19 +548,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "IES_Felipe_de_Borbón",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "ies-felipe-de-borbon",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "IES Felipe de Borbón",
+      "image": "images/img-ies-felipe-de-borbon.jpg"
     },
     "location": {
       "latitude": 38.080028,
@@ -581,19 +617,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Residencia_San_Pablo",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "residencia-san-pablo",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Residencia San Pablo",
+      "image": "images/img-residencia-san-pablo.jpg"
     },
     "location": {
       "latitude": 38.083132,
@@ -646,19 +686,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Auditorio_de_Ceutí",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "auditorio-de-ceuti",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Auditorio de Ceutí",
+      "image": "images/img-auditorio-de-ceuti.jpg"
     },
     "location": {
       "latitude": 38.077170,
@@ -711,19 +755,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Colegio_Diego_Martínez_Rico",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "colegio-diego-martinez-rico",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Colegio Diego Martínez Rico",
+      "image": "images/img-colegio-diego-martinez-rico.jpg"
     },
     "location": {
       "latitude": 38.075227,
@@ -776,19 +824,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Parroquia_Sta._María_Magdalena",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "parroquia-sta-maria-magdalena",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Parroquia Sta. María Magdalena",
+      "image": "images/img-parroquia-sta-maria-magdalena"
     },
     "location": {
       "latitude": 38.078922,
@@ -841,19 +893,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Colegio_Juan_Ayala_Hurtado",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "colegio-juan-ayala-hurtado",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Colegio Juan Ayala Hurtado",
+      "image": "images/img-colegio-juan-ayala-hurtado"
     },
     "location": {
       "latitude": 38.082324,
@@ -906,19 +962,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Colegio_Magda",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "colegio-magda",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Colegio Magda",
+      "image": ""
     },
     "location": {
       "latitude": 38.084794,
@@ -971,19 +1031,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Colegio_Los_Torraos",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "colegio-los-torraos",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Colegio Los Torraos",
+      "image": ""
     },
     "location": {
       "latitude": 38.098345,
@@ -1036,19 +1100,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Cementerio",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "cementerio",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Cementerio",
+      "image": ""
     },
     "location": {
       "latitude": 38.092569,
@@ -1101,19 +1169,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Polígono_Los_Torraos",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "poligono-los-torraos",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Polígono Los Torraos",
+      "image": ""
     },
     "location": {
       "latitude": 38.092014,
@@ -1166,19 +1238,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Polígono_de_Ceutí",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "poligono-de-ceuti",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Polígono de Ceutí",
+      "image": ""
     },
     "location": {
       "latitude": 38.084112,
@@ -1231,19 +1307,23 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   },
   {
-    "name": "Parque_La_Tejera",
-    "serverUrl": "coap://homard.hopu.eu",
-    "serverPort": "5693",
+    "name": "parque-la-tejera",
+    "serverUrl": "coap://leshan.eclipse.org",
+    "serverPort": "5683",
     "isBootstrap": false,
     "lifetime": 30,
     "device": {
       "model": "SmartSpot",
       "batteryStatus": 0,
       "batteryLevel": 55
+    },
+    "metadata": {
+      "place": "Parque de la Tejera",
+      "image": ""
     },
     "location": {
       "latitude": 38.088290,
@@ -1296,7 +1376,7 @@
         "sensorValue": 2
       }
     ],
-    "physicalUrl": "http://laperalimonera.com",
+    "physicalUrl": "http://hopu.eu",
     "crowdMonitoring": true
   }
 ]

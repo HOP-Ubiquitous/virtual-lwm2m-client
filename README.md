@@ -10,20 +10,14 @@ Se parte del cliente que proporciona leshan y se añade una capa de abstracción
 y recursos mediante un fichero json. El objetivo es proporcionar una manera sencilla de simular un gran número de dispositivos
 de una manera semiautomatizada.
 
-## Compatibilidad y versiones
-Actualmente existen dos versiones del cliente virtual: 0.1.11-M9 y LATEST.
+## API
 
-### 0.1.11-M9
-Compatible con la versión modificada por HOPU de lwm2m-iotagent.
-Compatible con homard-legacy y homard-staging
+## Dependencies
+- leshan-client-cf (version 0.1.11-M9 and latest): OMA LWM2M Client implementation. The library serves as main component
+to reach the reach the interaction client-server.
 
-### LATEST == 1.0.0-M4
-Compatible con homard-legacy y homard-staging
-
-### Sin compatibilidad
-Ahora mismo no hay versión compatible con leshan server demo
-
-## Objetos y recursos implementados
+## Configuration
+### Objetos y recursos implementados
 A continuación encontramos un ejemplo del fichero json que definirá los dispositivos a lanzar.
 
 ```json
@@ -90,6 +84,10 @@ A continuación encontramos un ejemplo del fichero json que definirá los dispos
          "sensorValue": 2
        }
      ],
+     "metadata": {
+       "place": "<place-name>",
+       "image": "<image-url>" 
+     },
      "physicalUrl": "http://laperalimonera.com",
      "crowdMonitoring": true
    }
@@ -192,9 +190,13 @@ del objeto:
   - **/10001/0/2 [N]** → Devices found in the last 10min.
   - **/10001/0/3 [N]** → Devices found in the last hour.
 
+### 32970 - SmartSpot Metadata [O|Ob]
+- **name (/32970/0/0) [O|A]** → This resource specifies a non technical name for the device. It helps in frontend representations
+- **metadata [O|Ob]** → Object that contains place name and image url
+  - **place (/32970/0/1) [O|S]** → This resource stores the device location in a readable way
+  - **image (/32970/0/2) [O|S]** → This resource stores a url that will redirect us to the image of the site where the device has been deployed
 
-## Construcción, despliegue y ejecución
-
+## Build, deploy and run
 El proyecto proporciona una serie de perfiles en Maven que nos permitirán simplificar los procesos que dan título a la sección.
 En primer lugar debemos distinguir los perfiles de construcción: generate-jar, docker-build y docker-push; de los perfiles 
 de versionado de leshan: leshan-version-0.1.11-M9 y leshan-version-LATEST. 
@@ -204,22 +206,19 @@ las opciones son excluyentes.
 Los perfiles de construcción nos permiten construir y desplegar el servicio de modo secuencial. Cada uno de ellos aprovecha
 la funcionalidad del anterior y le añade la propia. Pudiendo seleccionar solo el primero o los tres de forma simultánea.
 
-### generate-jar
+#### generate-jar
 Construye el jar de los distintos módulos y los situa en sus respectivos directorios target.
-### docker-build
+#### docker-build
 Construye la imagen docker en la máquina local con el nombre especificado y los tags develop y latest.
-### docker-push
+#### docker-push
 Sube la imagen al registry privado especificado con el tag latest. 
 
-
-## Lanzar imagen en docker
-
-### Ejecutar docker en línea de comandos
+### Lanzar imagen en docker
+#### Ejecutar docker en línea de comandos
 ```bash
 docker run -it --name virtual -v $(pwd)/devices.json:/opt/lwm2m-client/lib/devices.json <registry>/virtual-lwm2m-client-<version>:<tag>
 ```
-
-### Ejecutar mediante docker-compose
+#### Ejecutar mediante docker-compose
 ```
 version: '3'
 
@@ -236,9 +235,198 @@ services:
 El único parámetro a resaltar es el fichero que se le pasa al docker. El fichero devices.json representa el conjunto de
 dispositivos que se lanzarán. Siguiendo el formato presentado en secciones anteriores.
 
-### TBD 
+## Compatibility and versions
+Actualmente existen dos versiones del cliente virtual: 0.1.11-M9 y LATEST.
+
+### 0.1.11-M9
+Compatible con la versión modificada por HOPU de lwm2m-iotagent.
+Compatible con homard-legacy y homard-staging
+
+### LATEST == 1.0.0-M4
+Compatible con homard-legacy y homard-staging
+
+### Sin compatibilidad
+Ahora mismo no hay versión compatible con leshan server demo
+
+### To Be Done 
 - Explicar caso de la creación de rutas.
 - Explicar la función del parámetro device.model
 - Añadir imagen arquitectura por módulos.
 - Extender segmento arquitectura.
 - Añadir sección explicando la forma de añadir un nuevo recurso.
+
+## Extensibility
+### Represent a new OMA LWM2M Object
+This sectios exposes the easiest way for add a new OMA LWM2M Object. 
+1. **Define object representation in device json specification**. As can be seen in configuration section, the relation 
+between resources and the device json representation must be declared. The SmartSpot Metadata object is taken as an 
+example to illustrate the process. In this case, the object has three interesting resources: name, place and image. 
+In this case the name is already defined, so a new first level attribute is defined, named metadata, for place and image 
+resources.
+2. **Create new DeviceModel or modify existing**. Assuming that the DeviceModel is SmartSpot, a new object representation
+implies the eu.hopu.devices.SmartSpot class defining a new class field and, in this case a new custom dto for the data. Once
+the data is stored, the new OMA LWM2M object must be initialized in getObjectInitilizer method.
+- Modify constructor with jsonDevice as parameter,
+
+```java
+public class SmartSpot extends DeviceBase {
+
+    public SmartSpot(JsonObject jsonDevice) {
+        this(..., gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class)
+        );
+    }    
+}
+```
+
+- Define, if necessary a new Dto
+```java
+public class MetadataDto {
+
+    private String place;
+    private String image;
+
+    public MetadataDto() {
+    }
+
+    public MetadataDto(String place, String image) {
+        this.place = place;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    @Override
+    public String toString() {
+        return "MetadataDto{" +
+                "place='" + place + '\'' +
+                ", image='" + image + '\'' +
+                '}';
+    }
+
+}
+```
+
+- Modify constructor with each atribute as parameter and add new field
+```java
+public class SmartSpot extends DeviceBase {
+
+    private MetadataDto metadata;
+
+    public SmartSpot(..., MetadataDto metadata) {
+        this.metadata = metadata;
+    }
+}
+```
+
+- Modify getObjectInitializer method adding a new OMA LWM2M Object
+```java
+public class SmartSpot extends DeviceBase {
+
+    public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
+        ObjectsInitializer initializer = super.getObjectInitializer(models);
+        
+        // Object added
+        if (getMetadata() != null)
+            initializer.setInstancesForObject(32970, new MetadataObject(getMetadata()));
+
+        return initializer;
+    }
+
+}
+```
+
+- Create new OMA LWM2M Object
+
+```java
+public class MetadataObject extends BaseInstanceEnabler {
+
+    public static final int ID = 32970;
+
+    private final String name;
+    private final String place;
+    private final String image;
+
+    public MetadataObject() {
+        this.name = "";
+        this.place = "";
+        this.image = "";
+    }
+
+    public MetadataObject(String name, String place, String image) {
+        this.name = name;
+        this.place = place;
+        this.image = image;
+    }
+
+    @Override
+    public ReadResponse read(int resourceid) {
+        switch (resourceid) {
+            case 0:
+                return ReadResponse.success(resourceid, getName());
+            case 1:
+                return ReadResponse.success(resourceid, getPlace());
+            case 2:
+                return ReadResponse.success(resourceid, getImage());
+            default:
+                return super.read(resourceid);
+        }
+    }
+
+    @Override
+    public ExecuteResponse execute(int resourceid, String params) {
+        return ExecuteResponse.success();
+    }
+
+    @Override
+    public WriteResponse write(int resourceid, LwM2mResource value) {
+        return WriteResponse.success();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public String getImage() {
+        return image;
+    }
+}
+```
+
+- Add new OMA LWM2M object to getDeviceEnabledObjectsMethod
+```java
+public class SmartSpot extends DeviceBase {
+
+    @Override
+    List<LwM2mObjectEnabler> getDeviceEnabledObjects(ObjectsInitializer objectsInitializer) {
+        return objectsInitializer.create(SECURITY, SERVER, DEVICE,
+                IpsoTemperatureObject.ID,
+                IpsoHumidityObject.ID,
+                IpsoLoudnessObject.ID,
+                IpsoConcentrationObject.ID,
+                SmartSpotObject.ID,
+                NearWifiDevicesObject.ID,
+                MetadataObject.ID,
+                LOCATION);
+    }
+}
+```
+
+At this point, the service must be able to represent the desired new OMA LWM2M Object. 
