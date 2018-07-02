@@ -152,7 +152,7 @@
                             <registry>${docker-registry}</registry>
                             <images>
                                 <image>
-                                    <name>${image-name}:latest</name>
+                                    <name>${image-name}:1.0</name>
                                 </image>
                             </images>
                         </configuration>

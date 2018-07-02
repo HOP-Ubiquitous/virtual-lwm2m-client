@@ -1,14 +1,14 @@
 # LWM2M IoT Agent Client
 
 ## Introducción
-lwm2miotagentclient es un cliente virtual que simula un dispositivo lwm2m. Su objetivo es servir para pruebas en el desarrollo
-de sistemas para la gestión de dispositivos IoT. Concretamente se usa para pruebas sobre la plataforma HOMARD así como
-para pruebas sobre la arquitectura FIWARE.
+lwm2miotagentclient is a virtual client that simulates an lwm2m device. Its aim is to serve for tests in the development
+of systems for the management of IoT devices. Specifically, it is used for tests on the HOMARD platform, as well as for 
+tests on the FIWARE architecture.
+
 
 ## Arquitectura
-Se parte del cliente que proporciona leshan y se añade una capa de abstracción para ser capaz de crear objetos, instancias
-y recursos mediante un fichero json. El objetivo es proporcionar una manera sencilla de simular un gran número de dispositivos
-de una manera semiautomatizada.
+It starts from the client that provides leshan and an abstraction layer is added to be able to create objects, instances
+ and resources using a json file. The aim is to provide a simple way to simulate a large number of devices in a semi-automated manner.
 
 ## API
 
@@ -18,7 +18,7 @@ to reach the reach the interaction client-server.
 
 ## Configuration
 ### Objetos y recursos implementados
-A continuación encontramos un ejemplo del fichero json que definirá los dispositivos a lanzar.
+Below, we can see an example of the json file that will define the devices to be launched.
 
 ```json
 [
@@ -95,25 +95,25 @@ A continuación encontramos un ejemplo del fichero json que definirá los dispos
    ```
 
 ### Flags
-Para facilitar el proceso de creación de ficheros se añaden una serie de flags en cada recurso que permitirán al desarrollador
-tener información adicional del recurso en cuestión.
+To facilitate the process of creating files, a series of flags are added in each resource that will allow the developer 
+to have additional information about the resource in question.
 
 - Mandatory[**M**] | Optional[**O**]
-  - Un objeto opcional puede tener, en el momento en que se añade, recursos mandatory.
+  - An optional object may have, at the time it is added, mandatory resources.
 - Type: Object[**Ob**] | Array[**A**] | Integer[**I**] | Float[**F**] | String[**S**] | Boolean[**B**]
 - Observable[**N**]
-  - Recursos sobre los que se pueden crear observaciones.
+  - Resources on which observations can be created.
 
 ### Device ID [M|S]
-- **name [M|S]** → representa el identificador con el que el dispositivo se registrará en un servidor.
+- **name [M|S]** →  it represents the identifier with which the device will register on a server.
 
 ### 0 - LWM2M Security [M] 
-- **serverUrl (/0/0/0) [M|S]** → Url del servidor al que se conectará el dispositivo.
-- **serverPort (/0/0/0) [M|S]** → Puerto del servidor al que se conectará el dispositivo.
-- **isBootstrap (/0/0/1) [M|B]** →  Especifica si el servidor es Bootstrap.
+- **serverUrl (/0/0/0) [M|S]** → Server url to which the device will connect.
+- **serverPort (/0/0/0) [M|S]** → Server port to which the device will connect.
+- **isBootstrap (/0/0/1) [M|B]** →  It specifies if the server is Bootstrap.
 
 ### 1 - LWM2M Server [M]
-- **lifetime (/1/0/1) [M|I]** → Especifica el número de segundos entre UPDATES del dispositivo al servidor.
+- **lifetime (/1/0/1) [M|I]** → It specifies the number of seconds between UPDATES from the device to the server.
 
 ### 3 - Device [M|Ob]
 - **model (/3/0/0) [M|S]** → TBD
@@ -130,62 +130,62 @@ battery information is not available.
 
 ### 3303 - IPSO Temperature [O|A]
 - **Sensor value (/3303/0/5700) [N]** → This resource type returns the Temperature Value in °C. Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 ### 3304 - IPSO Humidity [O|A]  
 - **Sensor value (/3304/0/5700) [N]** → This resource type returns the Humidity Value in relative humidity (%RH). Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 ### 3324 - IPSO Loudness [O|Ob]
 - **Sensor value (/3324/0/5700) [N]** → This resource type returns the Loudness Value in dB. Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 ### Gasses [O|A]
-En esta sección se añaden los diferentes gases que el dispositivo puede representar. El orden determina el gas representado.
-De este modo cada una de las elementos en el array representan en orden secuencial:
+In this section, the different gases which the device can represent are added. The order determines the gas represented.
+ In this way, each element in the array represent in sequential order:
 
 #### 3325 - NO2 [O|Ob]
 - **Sensor value (/3325/0/5700) [N]** → This resource type returns the Concentration Value. Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 #### 3325 - SO2 [O|Ob]
 - **Sensor value (/3325/1/5700) [N]** → This resource type returns the Concentration Value. Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 #### 3325 - O3 [O|Ob]
 - **Sensor value (/3325/2/5700) [N]** → This resource type returns the Concentration Value. Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 #### 3325 - H2S [O|Ob]
 - **Sensor value (/3325/3/5700) [N]** → This resource type returns the Concentration Value. Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 #### 3325 - CO [O|Ob]
 - **Sensor value (/3325/4/5700) [N]** → This resource type returns the Concentration Value. Se proporcionan tres valores:
-  - **maxValue [M|I]** → Valor máximo que puede tomar el recurso.
-  - **minValue [M|I]** → Valor mínimo que puede tomar el recurso.
-  - **sensorValue [M|I]** → Valor con el que se iniciará el recurso.
+  - **maxValue [M|I]** → Maximum value that the resource can take.
+  - **minValue [M|I]** → Minimum value that the resource can take.
+  - **sensorValue [M|I]** → Value at which the resource will start.
 
 ### 10000 - SmartSpot [O|S]
 - **physicalUrl (/10000/0/0) [O|S]** → Shows URL advertised.
 
 ### 10001 - Near WiFi devices [O|B]
-- **crowdMonitoring [O|B]** → Este recurso activa la opción crowd monitoring que generará los siguientes tres recursos
-del objeto:
+- **crowdMonitoring [O|B]** → This resource activates the crowd monitoring option that will generate the following three 
+resources of the object:
   - **/10001/0/1 [N]** → Devices found in the last min.
   - **/10001/0/2 [N]** → Devices found in the last 10min.
   - **/10001/0/3 [N]** → Devices found in the last hour.
@@ -197,21 +197,21 @@ del objeto:
   - **image (/32970/0/2) [O|S]** → This resource stores a url that will redirect us to the image of the site where the device has been deployed
 
 ## Build, deploy and run
-El proyecto proporciona una serie de perfiles en Maven que nos permitirán simplificar los procesos que dan título a la sección.
-En primer lugar debemos distinguir los perfiles de construcción: generate-jar, docker-build y docker-push; de los perfiles 
-de versionado de leshan: leshan-version-0.1.11-M9 y leshan-version-LATEST. 
-
-Los perfiles de versionado de leshan nos permiten determinar la versión con que se construirá el cliente. En este caso
-las opciones son excluyentes.
-Los perfiles de construcción nos permiten construir y desplegar el servicio de modo secuencial. Cada uno de ellos aprovecha
-la funcionalidad del anterior y le añade la propia. Pudiendo seleccionar solo el primero o los tres de forma simultánea.
+The project provides a series of profiles in Maven which will allow us to simplify the processes that give title to the 
+section. First of all, we must distinguish the construction profiles: generate-jar, docker-build and docker-push; of the
+ leshan versioning profiles: leshan-version-0.1.11-M9 and leshan-version-LATEST.
+The leshan versioning profiles allow us to determine the version with which the client will be built. In this case, the 
+options are exclusive. The construction profiles allow us to build and deploy the service sequentially. Each of them takes
+ advantage of the functionality of the previous one and adds its own, being able to select only the first or the three simultaneously.
 
 #### generate-jar
-Construye el jar de los distintos módulos y los situa en sus respectivos directorios target.
+Build the jar of the different modules and place them in their respective target directories.
+
 #### docker-build
-Construye la imagen docker en la máquina local con el nombre especificado y los tags develop y latest.
+Build the docker image on the local machine with the specified name and the develop and latest tags.
+
 #### docker-push
-Sube la imagen al registry privado especificado con el tag latest. 
+Upload the image to the private registry specified with the latest tag.
 
 ### Lanzar imagen en docker
 #### Ejecutar docker en línea de comandos
@@ -232,32 +232,30 @@ services:
 ```
 
 ### Parámetros
-El único parámetro a resaltar es el fichero que se le pasa al docker. El fichero devices.json representa el conjunto de
-dispositivos que se lanzarán. Siguiendo el formato presentado en secciones anteriores.
+The only parameter to highlight is the file that is passed to the docker. The file devices.json represents the set of devices that will be launched, following the format presented in previous sections.
 
 ## Compatibility and versions
-Actualmente existen dos versiones del cliente virtual: 0.1.11-M9 y LATEST.
+Currently, there are two versions of the virtual client: 0.1.11-M9 and LATEST.
 
 ### 0.1.11-M9
-Compatible con la versión modificada por HOPU de lwm2m-iotagent.
-Compatible con homard-legacy y homard-staging
+Compatible with the modified version by HOPU of lwm2m-iotagent. Compatible with homard-legacy and homard-staging.
 
 ### LATEST == 1.0.0-M4
-Compatible con homard-legacy y homard-staging
+Compatible with homard-legacy and homard-staging.
 
 ### Sin compatibilidad
-Ahora mismo no hay versión compatible con leshan server demo
+Currently, there is no compatible version with leshan server demo.
 
 ### To Be Done 
-- Explicar caso de la creación de rutas.
-- Explicar la función del parámetro device.model
-- Añadir imagen arquitectura por módulos.
-- Extender segmento arquitectura.
-- Añadir sección explicando la forma de añadir un nuevo recurso.
+- Explain the case of the creation of routes.
+- Explain the function of the device.model parameter
+- Add architecture image by modules.
+- Extend architecture segment.
+- Add section explaining how to add a new resource.
 
 ## Extensibility
 ### Represent a new OMA LWM2M Object
-This sectios exposes the easiest way for add a new OMA LWM2M Object. 
+This section exposes the easiest way for add a new OMA LWM2M Object. 
 1. **Define object representation in device json specification**. As can be seen in configuration section, the relation 
 between resources and the device json representation must be declared. The SmartSpot Metadata object is taken as an 
 example to illustrate the process. In this case, the object has three interesting resources: name, place and image. 

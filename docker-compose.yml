@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  virtual-lwm2m-client:
+    image: virtual-lwm2m-client:develop
+    volumes:
+      - "./virtualDeviceLauncher/src/main/resources/devices.json:/opt/lwm2m-client/lib/devices.json"
