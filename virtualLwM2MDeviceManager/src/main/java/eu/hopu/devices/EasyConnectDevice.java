@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import eu.hopu.dto.DeviceDto;
-import eu.hopu.dto.LocationDto;
-import eu.hopu.dto.MetadataDto;
-import eu.hopu.dto.SensorDto;
+import eu.hopu.dto.*;
 import eu.hopu.objects.*;
 import org.eclipse.leshan.client.resource.LwM2mObjectEnabler;
 import org.eclipse.leshan.client.resource.ObjectsInitializer;
@@ -18,7 +15,7 @@ import java.util.List;
 import static org.eclipse.leshan.LwM2mId.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SmartSpot extends DeviceBase {
+public class EasyConnectDevice extends DeviceBase {
 
     private final static Gson gson = new Gson();
 
@@ -27,38 +24,28 @@ public class SmartSpot extends DeviceBase {
     private SensorDto loudness;
     private List<SensorDto> gasses;
     private String physicalUrl;
+    private APNConnectionDto apnConnectivity;
+    private WlanConnectionDto wlanConnectivity;
     private boolean crowdMonitoring;
-    private MetadataDto metadata;
 
-    public SmartSpot() {
+    public EasyConnectDevice() {
         super();
     }
 
-    public SmartSpot(String name,
-                     String serverUrl,
-                     String serverPort,
-                     int lifetime,
-                     DeviceDto device,
-                     LocationDto location,
-                     List<SensorDto> temperatures,
-                     List<SensorDto> humidities,
-                     SensorDto loudness,
-                     List<SensorDto> gasses,
-                     String physicalUrl,
-                     boolean crowdMonitoring,
-                     Boolean isBootstrap,
-                     MetadataDto metadata) {
+    public EasyConnectDevice(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, List<SensorDto> temperatures, List<SensorDto> humidities, SensorDto loudness, List<SensorDto> gasses, String physicalUrl, boolean crowdMonitoring, Boolean isBootstrap
+            ,APNConnectionDto apnConnectivity, WlanConnectionDto wlanConnectivity) {
         super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap);
         this.temperatures = temperatures;
         this.humidities = humidities;
         this.loudness = loudness;
         this.gasses = gasses;
         this.physicalUrl = physicalUrl;
+        this.apnConnectivity = apnConnectivity;
+        this.wlanConnectivity = wlanConnectivity;
         this.crowdMonitoring = crowdMonitoring;
-        this.metadata = metadata;
     }
 
-    public SmartSpot(JsonObject jsonDevice) {
+    public EasyConnectDevice(JsonObject jsonDevice) {
         this(
                 jsonDevice.get("name").getAsString(), jsonDevice.get("serverUrl").getAsString(),
                 jsonDevice.get("serverPort").getAsString(),
@@ -84,7 +71,8 @@ public class SmartSpot extends DeviceBase {
                 jsonDevice.get("physicalUrl").getAsString(),
                 jsonDevice.get("crowdMonitoring").getAsBoolean(),
                 jsonDevice.get("isBootstrap").getAsBoolean(),
-                gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class)
+                gson.fromJson(jsonDevice.get("apnConnectivity"), APNConnectionDto.class),
+                gson.fromJson(jsonDevice.get("wlanConnectivity"), WlanConnectionDto.class)
         );
     }
 
@@ -141,9 +129,17 @@ public class SmartSpot extends DeviceBase {
         this.crowdMonitoring = crowdMonitoring;
     }
 
-    public MetadataDto getMetadata() {return metadata;}
+    public APNConnectionDto getApnConnectivity() {
+        return apnConnectivity;
+    }
 
-    public void setMetadata(MetadataDto metadata) {this.metadata = metadata;}
+    public void setApnConnectivity(APNConnectionDto apnConnectivity) {
+        this.apnConnectivity = apnConnectivity;
+    }
+
+    public WlanConnectionDto getWlanConnectivity() { return wlanConnectivity; }
+
+    public void setWlanConnectivity(WlanConnectionDto wlanConnectivity) { this.wlanConnectivity = wlanConnectivity; }
 
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = super.getObjectInitializer(models);
@@ -194,15 +190,19 @@ public class SmartSpot extends DeviceBase {
             }
             initializer.setInstancesForObject(3325, ipsoGasses);
         }
-        
+
+
         if (getPhysicalUrl() != null)
             initializer.setInstancesForObject(10000, new SmartSpotObject(getPhysicalUrl()));
 
         if (hasCrowdMonitoring())
             initializer.setInstancesForObject(10001, new NearWifiDevicesObject());
 
-        if (getMetadata() != null)
-            initializer.setInstancesForObject(32970, new MetadataObject(getName(), metadata.getPlace(), metadata.getImage()));
+        if (getApnConnectivity() != null)
+            initializer.setInstancesForObject(11,new APNConnectionObject());
+
+        if (getWlanConnectivity() != null)
+            initializer.setInstancesForObject(12,new WlanConnectionObject());
 
         return initializer;
     }
@@ -216,13 +216,14 @@ public class SmartSpot extends DeviceBase {
                 IpsoConcentrationObject.ID,
                 SmartSpotObject.ID,
                 NearWifiDevicesObject.ID,
-                MetadataObject.ID,
+                APNConnectionObject.ID,
+                WlanConnectionObject.ID,
                 LOCATION);
     }
 
     @Override
     public String toString() {
-        return "SmartSpot{" +
+        return "EasyConnectDevice{" +
                 "name='" + getName() + '\'' +
                 ", serverUrl='" + getServerUrl() + '\'' +
                 ", serverPort='" + getServerPort() + '\'' +
@@ -235,10 +236,10 @@ public class SmartSpot extends DeviceBase {
                 ", gasses=" + gasses +
                 ", physicalUrl='" + physicalUrl + '\'' +
                 ", crowdMonitoring=" + crowdMonitoring +
+                ", apnConnectivity=" + apnConnectivity +
+                ", wlanConnectivity=" + wlanConnectivity +
                 ", localAddress='" + getLocalAddress() + '\'' +
                 ", localPort=" + getLocalPort() +
-                ", metadata=" + metadata +
                 '}';
     }
-
 }
