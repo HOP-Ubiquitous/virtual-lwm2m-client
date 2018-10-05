@@ -1,0 +1,1026 @@
+[
+  {
+    "name": "HOP240ac406be5a",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.0770456,
+      "longitude": -1.2712549000000308,
+      "altitude": 1
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ]
+  ,
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP240ac406beae",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.080720,
+      "longitude": -1.276781,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ]
+  ,
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP240ac406a1d2",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.077750,
+      "longitude": -1.274388,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP240ac406551e",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.079193,
+      "longitude": -1.268818,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP240ac406a2ea",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.078285,
+      "longitude": -1.278416,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOPf4b85eab7af1",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.082150,
+      "longitude": -1.278528,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP0017ea900187",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.081941,
+      "longitude": -1.285064,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP0017ea8fee08",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.080425,
+      "longitude": -1.281345,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOPf4b85eab9b1d",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.080028,
+      "longitude": -1.265347,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP240ac405e516",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.083132,
+      "longitude": -1.283040,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOP240ac4114242",
+    "serverUrl": "coap://192.168.1.58",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.077170,
+      "longitude": -1.276326,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true,
+    "apnConnectivity":
+    {
+      "instance" : 0,
+      "name": "apn_connection",
+      "enable": true,
+      "apn":1,
+      "authentication": "1",
+      "user": "username",
+      "secret:": "password",
+      "pin": "1234"
+    },
+    "wlanConnectivity":
+    {
+      "instance" : 0,
+      "enable": true,
+      "ssid:": "defaultSSAP",
+      "mode": 1,
+      "channel": 2,
+      "standard":2,
+      "authentication":0,
+      "encryption":0
+    }
+  },
+  {
+    "name": "HOPf4b85eab9b1c",
+    "serverUrl": "coap://homard.hopu.eu",
+    "serverPort": "5693",
+    "isBootstrap": false,
+    "lifetime": 30,
+    "device": {
+      "model": "SmartSpot",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.075227,
+      "longitude": -1.272698,
+      "altitude": 3
+    },
+    "temperatures": [
+      {
+        "maxValue": 25,
+        "minValue": 19,
+        "sensorValue": 22
+      }
+    ],
+    "humidities": [
+      {
+        "maxValue": 60,
+        "minValue": 30,
+        "sensorValue": 45
+      }
+    ],
+    "loudness": {
+      "maxValue": 20,
+      "minValue": 10,
+      "sensorValue": 15
+    },
+    "gasses": [
+      {
+        "maxValue": 19,
+        "minValue": 0,
+        "sensorValue": 6
+      },
+      {
+        "maxValue": 52,
+        "minValue": 0,
+        "sensorValue": 17
+      },
+      {
+        "maxValue": 56,
+        "minValue": 0,
+        "sensorValue": 21
+      },
+      {
+        "maxValue": 100,
+        "minValue": 0,
+        "sensorValue": 40
+      },
+      {
+        "maxValue": 10,
+        "minValue": 0,
+        "sensorValue": 2
+      }
+    ],
+    "physicalUrl": "http://laperalimonera.com",
+    "crowdMonitoring": true
+  }
+]

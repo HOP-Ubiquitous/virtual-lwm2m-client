@@ -25,7 +25,7 @@ public class SmartSpotObject extends BaseInstanceEnabler {
     @Override
     public ReadResponse read(int resourceid) {
         LOG.info("Read on SmartSpot Resource " + resourceid);
-        System.out.println("Read operation received with resourceid " + resourceid);
+        System.out.println("Read operation received with resourceid " + resourceid+ " in object "+ID);
 
         switch (resourceid) {
             case 0:
