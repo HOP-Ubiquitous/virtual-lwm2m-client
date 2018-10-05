@@ -1,13 +1,9 @@
 package eu.hopu.devices;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import eu.hopu.dto.DeviceDto;
-import eu.hopu.dto.LocationDto;
-import eu.hopu.dto.MetadataDto;
-import eu.hopu.dto.SensorDto;
+import eu.hopu.dto.*;
 import eu.hopu.objects.*;
 import org.eclipse.leshan.client.resource.LwM2mObjectEnabler;
 import org.eclipse.leshan.client.resource.ObjectsInitializer;
@@ -17,8 +13,7 @@ import java.util.List;
 
 import static org.eclipse.leshan.LwM2mId.*;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class SmartSpot extends DeviceBase {
+public class DataModelIoTAgentDevice extends DeviceBase {
 
     private final static Gson gson = new Gson();
 
@@ -29,25 +24,27 @@ public class SmartSpot extends DeviceBase {
     private String physicalUrl;
     private boolean crowdMonitoring;
     private MetadataDto metadata;
+    private ConnectivityMonitoringDto connectivityMonitoring;
 
-    public SmartSpot() {
+    public DataModelIoTAgentDevice() {
         super();
     }
 
-    public SmartSpot(String name,
-                     String serverUrl,
-                     String serverPort,
-                     int lifetime,
-                     DeviceDto device,
-                     LocationDto location,
-                     List<SensorDto> temperatures,
-                     List<SensorDto> humidities,
-                     SensorDto loudness,
-                     List<SensorDto> gasses,
-                     String physicalUrl,
-                     boolean crowdMonitoring,
-                     Boolean isBootstrap,
-                     MetadataDto metadata) {
+    public DataModelIoTAgentDevice(String name,
+                                   String serverUrl,
+                                   String serverPort,
+                                   int lifetime,
+                                   DeviceDto device,
+                                   LocationDto location,
+                                   List<SensorDto> temperatures,
+                                   List<SensorDto> humidities,
+                                   SensorDto loudness,
+                                   List<SensorDto> gasses,
+                                   String physicalUrl,
+                                   boolean crowdMonitoring,
+                                   Boolean isBootstrap,
+                                   MetadataDto metadata,
+                                   ConnectivityMonitoringDto connectivityMonitoring) {
         super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap);
         this.temperatures = temperatures;
         this.humidities = humidities;
@@ -56,9 +53,10 @@ public class SmartSpot extends DeviceBase {
         this.physicalUrl = physicalUrl;
         this.crowdMonitoring = crowdMonitoring;
         this.metadata = metadata;
+        this.connectivityMonitoring = connectivityMonitoring;
     }
 
-    public SmartSpot(JsonObject jsonDevice) {
+    public DataModelIoTAgentDevice(JsonObject jsonDevice) {
         this(
                 jsonDevice.get("name").getAsString(), jsonDevice.get("serverUrl").getAsString(),
                 jsonDevice.get("serverPort").getAsString(),
@@ -84,7 +82,8 @@ public class SmartSpot extends DeviceBase {
                 jsonDevice.get("physicalUrl").getAsString(),
                 jsonDevice.get("crowdMonitoring").getAsBoolean(),
                 jsonDevice.get("isBootstrap").getAsBoolean(),
-                gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class)
+                gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class),
+                gson.fromJson(jsonDevice.get("connectivityMonitoring"), ConnectivityMonitoringDto.class)
         );
     }
 
@@ -141,9 +140,21 @@ public class SmartSpot extends DeviceBase {
         this.crowdMonitoring = crowdMonitoring;
     }
 
-    public MetadataDto getMetadata() {return metadata;}
+    public MetadataDto getMetadata() {
+        return metadata;
+    }
 
-    public void setMetadata(MetadataDto metadata) {this.metadata = metadata;}
+    public void setMetadata(MetadataDto metadata) {
+        this.metadata = metadata;
+    }
+
+    public ConnectivityMonitoringDto getConnectivityMonitoring() {
+        return connectivityMonitoring;
+    }
+
+    public void setConnectivityMonitoring(ConnectivityMonitoringDto connectivityMonitoring) {
+        this.connectivityMonitoring = connectivityMonitoring;
+    }
 
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
         ObjectsInitializer initializer = super.getObjectInitializer(models);
@@ -195,10 +206,8 @@ public class SmartSpot extends DeviceBase {
             initializer.setInstancesForObject(3325, ipsoGasses);
         }
 
-        if (getPhysicalUrl() != null) {
-            SmartSpotObject smartSpotObject = new SmartSpotObject(getPhysicalUrl());
-            initializer.setInstancesForObject(10000, smartSpotObject);
-        }
+        if (getPhysicalUrl() != null)
+            initializer.setInstancesForObject(10000, new SmartSpotObject(getPhysicalUrl()));
 
         if (hasCrowdMonitoring())
             initializer.setInstancesForObject(10001, new NearWifiDevicesObject());
@@ -206,12 +215,17 @@ public class SmartSpot extends DeviceBase {
         if (getMetadata() != null)
             initializer.setInstancesForObject(32970, new MetadataObject(getName(), metadata.getPlace(), metadata.getImage()));
 
+        if (getConnectivityMonitoring() != null)
+            initializer.setInstancesForObject(4, new ConnectivityMonitoringObject(
+                    connectivityMonitoring.getMcc(), connectivityMonitoring.getMnc(), connectivityMonitoring.getIpAddress()));
+
         return initializer;
     }
 
     @Override
     List<LwM2mObjectEnabler> getDeviceEnabledObjects(ObjectsInitializer objectsInitializer) {
         return objectsInitializer.create(SECURITY, SERVER, DEVICE,
+                ConnectivityMonitoringObject.ID,
                 IpsoTemperatureObject.ID,
                 IpsoHumidityObject.ID,
                 IpsoLoudnessObject.ID,
@@ -224,7 +238,7 @@ public class SmartSpot extends DeviceBase {
 
     @Override
     public String toString() {
-        return "SmartSpot{" +
+        return "DataModelIoTAgentDevice{" +
                 "name='" + getName() + '\'' +
                 ", serverUrl='" + getServerUrl() + '\'' +
                 ", serverPort='" + getServerPort() + '\'' +
@@ -242,7 +256,4 @@ public class SmartSpot extends DeviceBase {
                 ", metadata=" + metadata +
                 '}';
     }
-
-
-
 }

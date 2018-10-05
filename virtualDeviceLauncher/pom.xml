@@ -32,6 +32,16 @@
             <artifactId>jsonInputReader</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -39,25 +49,6 @@
     </build>
 
     <profiles>
-
-        <!--LESHAN-VERSION-PROFILES-->
-        <profile>
-            <id>leshan-version-0.1.11-M9</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <leshan-version>0.11.1.9</leshan-version>
-                <image-name>${packaged-name}-${leshan-version}</image-name>
-            </properties>
-        </profile>
-        <profile>
-            <id>leshan-version-LATEST</id>
-            <properties>
-                <leshan-version>latest</leshan-version>
-                <image-name>${packaged-name}-${leshan-version}</image-name>
-            </properties>
-        </profile>
 
         <!--GENERATE-JAR PROFILE-->
         <profile>
@@ -119,8 +110,6 @@
                                     <name>${image-name}:develop</name>
                                     <build>
                                         <dockerFileDir>${project.basedir}</dockerFileDir>
-                                        <tags>latest</tags>
-                                        <filter>@</filter>
                                     </build>
                                 </image>
                             </images>

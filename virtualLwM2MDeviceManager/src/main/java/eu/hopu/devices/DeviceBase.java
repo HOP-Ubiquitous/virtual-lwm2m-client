@@ -3,7 +3,9 @@ package eu.hopu.devices;
 
 import eu.hopu.dto.DeviceDto;
 import eu.hopu.dto.LocationDto;
-import eu.hopu.objects.*;
+import eu.hopu.objects.DeviceObject;
+import eu.hopu.objects.LocationObject;
+import eu.hopu.objects.RouteLocationObject;
 import org.eclipse.leshan.client.californium.LeshanClient;
 import org.eclipse.leshan.client.californium.LeshanClientBuilder;
 import org.eclipse.leshan.client.object.Server;
@@ -14,8 +16,8 @@ import org.eclipse.leshan.core.model.ObjectLoader;
 import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.BindingMode;
 
-import java.io.*;
-import java.net.URL;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +25,18 @@ import static org.eclipse.leshan.LwM2mId.*;
 import static org.eclipse.leshan.client.object.Security.noSec;
 import static org.eclipse.leshan.client.object.Security.noSecBootstap;
 
+//import eu.javaspecialists.tjsn.concurrency.stripedexecutor.StripedExecutorService;
+//import org.eclipse.californium.core.observe.ObservationStore;
+//import org.eclipse.leshan.core.californium.EndpointFactory;
+//import org.eclipse.leshan.util.NamedThreadFactory;
+
 public abstract class DeviceBase {
 
+//    private final static ScheduledExecutorService executor = Executors.newScheduledThreadPool(1, new NamedThreadFactory("CoapServer#%d"));
+//
+//    private static ScheduledExecutorService getExecutor() {
+//        return executor;
+//    }
 
     public static final DeviceBase NULL = new DeviceBase() {
         @Override
@@ -146,6 +158,7 @@ public abstract class DeviceBase {
 
     public LeshanClient getLeshanClient() {
 
+
         ObjectsInitializer objectsInitializer = getObjectInitializer(models);
         List<LwM2mObjectEnabler> enablers = getDeviceEnabledObjects(objectsInitializer);
 
@@ -153,7 +166,28 @@ public abstract class DeviceBase {
         builder.setLocalAddress(getLocalAddress(), getLocalPort());
         builder.setObjects(enablers);
 
-        return builder.build();
+//        NetworkConfig coapConfig = LeshanClientBuilder.createDefaultNetworkConfig();
+//        coapConfig.set(NetworkConfig.Keys.DEDUPLICATOR, NetworkConfig.Keys.NO_DEDUPLICATOR);
+//
+//        builder.setCoapConfig(coapConfig);
+//
+//        builder.setEndpointFactory(new EndpointFactory() {
+//            @Override
+//            public CoapEndpoint createUnsecuredEndpoint(InetSocketAddress address, NetworkConfig coapConfig, ObservationStore store) {
+//                return new CoapEndpoint(address, coapConfig);
+//            }
+//
+//            @Override
+//            public CoapEndpoint createSecuredEndpoint(DtlsConnectorConfig dtlsConfig, NetworkConfig coapConfig, ObservationStore store) {
+//                DTLSConnector dtlsConnector = new DTLSConnector(dtlsConfig);
+//                dtlsConnector.setExecutor(new StripedExecutorService(getExecutor()));
+//                return new CoapEndpoint(dtlsConnector, coapConfig, null, null);
+//            }
+//        });
+
+        LeshanClient client = builder.build();
+//        client.getCoapServer().setExecutor(getExecutor());
+        return client;
     }
 
     public ObjectsInitializer getObjectInitializer(List<ObjectModel> models) {
@@ -167,7 +201,8 @@ public abstract class DeviceBase {
             initializer.setInstancesForObject(SERVER, new Server(123, getLifetime(), BindingMode.U, false));
         }
 
-        initializer.setInstancesForObject(DEVICE, new DeviceObject(name, deviceDto.getBatteryStatus(), deviceDto.getBatteryLevel()));
+        initializer.setInstancesForObject(DEVICE, new DeviceObject(name,
+                deviceDto.getType(), deviceDto.getBatteryStatus(), deviceDto.getBatteryLevel()));
 
         LocationDto location = getLocation();
         if (location != null)

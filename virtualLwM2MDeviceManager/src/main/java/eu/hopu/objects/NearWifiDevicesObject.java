@@ -1,5 +1,6 @@
 package eu.hopu.objects;
 
+import eu.hopu.observerPool.ObserverUpdater;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
 import org.eclipse.leshan.core.node.LwM2mResource;
 import org.eclipse.leshan.core.response.ExecuteResponse;
@@ -18,43 +19,15 @@ public class NearWifiDevicesObject extends BaseInstanceEnabler {
     public static final String PATH = "10001.xml";
 
     public NearWifiDevicesObject() {
-        Timer timer = new Timer("Near wifi devices");
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                fireResourcesChange(1);
-            }
-        }, 5000, 30000);
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                fireResourcesChange(2);
-            }
-        }, 5000, 30000);
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                fireResourcesChange(3);
-            }
-        }, 5000, 30000);
+        ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 1,2,3);
+
+//        Timer timer = new Timer("Near wifi devices");
 //        timer.schedule(new TimerTask() {
 //            @Override
 //            public void run() {
-//                fireResourcesChange(1);
+//                fireResourcesChange(1,2,3);
 //            }
-//        }, 5000, 60000);
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                fireResourcesChange(2);
-//            }
-//        }, 5000, 600000);
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                fireResourcesChange(3);
-//            }
-//        }, 5000, 3600000);
+//        }, 5000, 30000);
     }
 
     @Override

@@ -2,11 +2,7 @@ package eu.hopu;
 
 import eu.hopu.devices.DeviceBase;
 import org.eclipse.leshan.client.californium.LeshanClient;
-import org.eclipse.leshan.core.model.ObjectLoader;
-import org.eclipse.leshan.core.model.ObjectModel;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;

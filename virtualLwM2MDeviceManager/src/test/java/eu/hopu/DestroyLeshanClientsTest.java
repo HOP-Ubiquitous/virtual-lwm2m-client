@@ -14,7 +14,6 @@ import java.util.List;
 
 public class DestroyLeshanClientsTest {
 
-    private final String PATH = "src/test/resources/";
     private JsonObject jsonSmartSpotObj;
 
     @Before

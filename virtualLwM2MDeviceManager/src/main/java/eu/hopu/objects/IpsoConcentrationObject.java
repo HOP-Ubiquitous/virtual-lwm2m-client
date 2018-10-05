@@ -1,5 +1,6 @@
 package eu.hopu.objects;
 
+import eu.hopu.observerPool.ObserverUpdater;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
 import org.eclipse.leshan.core.node.LwM2mResource;
 import org.eclipse.leshan.core.response.ExecuteResponse;
@@ -29,13 +30,15 @@ public class IpsoConcentrationObject extends BaseInstanceEnabler {
         this.minValue = minValue;
         this.sensorValue = sensorValue;
 
-        Timer timer = new Timer("SensorDto Value");
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                fireResourcesChange(5700);
-            }
-        }, 5000, 30000);
+        ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 5700);
+
+//        Timer timer = new Timer("SensorDto Value");
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                fireResourcesChange(5700);
+//            }
+//        }, 5000, 30000);
     }
 
     @Override

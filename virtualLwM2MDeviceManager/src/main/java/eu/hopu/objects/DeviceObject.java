@@ -1,5 +1,6 @@
 package eu.hopu.objects;
 
+import eu.hopu.observerPool.ObserverUpdater;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
 import org.eclipse.leshan.core.model.ResourceModel;
 import org.eclipse.leshan.core.node.LwM2mResource;
@@ -16,27 +17,30 @@ public class DeviceObject extends BaseInstanceEnabler {
 
     private final String name;
     private final int batteryStatus;
+    private String type;
     private int batteryLevel;
-
 
     public DeviceObject() {
         this.name = "HOP100000000000";
         this.batteryStatus = 100;
         this.batteryLevel = 99;
+        this.type = "Smart Cities";
     }
 
-    public DeviceObject(String name, int batteryStatus, int batteryLevel) {
+    public DeviceObject(String name, String type, int batteryStatus, int batteryLevel) {
         this.name = name;
+        this.type = type;
         this.batteryStatus = batteryStatus;
         this.batteryLevel = batteryLevel;
 
-        Timer timer = new Timer("DeviceObject Observer Timer");
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                fireResourcesChange(9);
-            }
-        }, 10000, 30000);
+        ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 9);
+//        Timer timer = new Timer("DeviceObject Observer Timer");
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                fireResourcesChange(9);
+//            }
+//        }, 10000, 30000);
     }
 
     @Override
@@ -153,7 +157,7 @@ public class DeviceObject extends BaseInstanceEnabler {
     }
 
     private String getDeviceType() {
-        return "Demo";
+        return type;
     }
 
     private String getHardwareVersion() {
@@ -171,4 +175,5 @@ public class DeviceObject extends BaseInstanceEnabler {
     public String getName() {
         return name;
     }
+
 }

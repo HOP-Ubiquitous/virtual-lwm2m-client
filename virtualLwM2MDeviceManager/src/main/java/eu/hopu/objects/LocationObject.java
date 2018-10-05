@@ -1,9 +1,12 @@
 package eu.hopu.objects;
 
+import eu.hopu.observerPool.ObserverUpdater;
 import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
 import org.eclipse.leshan.core.response.ReadResponse;
 
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class LocationObject extends BaseInstanceEnabler {
 
@@ -19,6 +22,16 @@ public class LocationObject extends BaseInstanceEnabler {
         this.longitude = longitude;
         this.altitude = altitude;
         this.timestamp = new Date();
+
+        ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 0, 1);
+
+//        Timer timer = new Timer("DeviceObject Observer Timer");
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                fireResourcesChange(0, 1);
+//            }
+//        }, 10000, 30000);
     }
 
 
