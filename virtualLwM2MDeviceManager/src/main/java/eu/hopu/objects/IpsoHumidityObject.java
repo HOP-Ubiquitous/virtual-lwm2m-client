@@ -10,8 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class IpsoHumidityObject extends BaseInstanceEnabler {
 
@@ -31,14 +29,6 @@ public class IpsoHumidityObject extends BaseInstanceEnabler {
         this.sensorValue = sensorValue;
 
         ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 5700);
-
-//        Timer timer = new Timer("SensorDto Value");
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                fireResourcesChange(5700);
-//            }
-//        }, 11000, 30000);
     }
 
     @Override
@@ -59,17 +49,28 @@ public class IpsoHumidityObject extends BaseInstanceEnabler {
 
     @Override
     public WriteResponse write(int resourceid, LwM2mResource value) {
-        return super.write(resourceid, value);
+        LOG.info("Write operacion in {}:{}", resourceid, value.getValue());
+        switch (resourceid) {
+            case 5700:
+                this.sensorValue = (double) value.getValue();
+                return WriteResponse.success();
+            default:
+                return super.write(resourceid, value);
+        }
     }
 
+//    private double getSensorValue() {
+//        double v = RANDOM.nextDouble() * 10;
+//        if (sensorValue < minValue)
+//            sensorValue += v;
+//        else if (sensorValue > maxValue)
+//            sensorValue -= v;
+//        else
+//            sensorValue += v / 2;
+//        return sensorValue;
+//    }
+
     private double getSensorValue() {
-        double v = RANDOM.nextDouble() * 10;
-        if (sensorValue < minValue)
-            sensorValue += v;
-        else if (sensorValue > maxValue)
-            sensorValue -= v;
-        else
-            sensorValue += v / 2;
         return sensorValue;
     }
 }

@@ -2321,7 +2321,7 @@
       {
         "id": 5700,
         "name": "Sensor Value",
-        "operations": "R",
+        "operations": "RW",
         "instancetype": "single",
         "mandatory": true,
         "type": "float",
@@ -5461,6 +5461,79 @@
         "range": "",
         "units": "",
         "description": "Measurement Units Definition"
+      }
+    ]
+  },
+  {
+    "name": "Relay Control",
+    "id": 32983,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 0,
+        "name": "Relay state",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "Enable/disable the relay or read the current value"
+      },
+      {
+        "id": 1,
+        "name": "Auto-Off enabled",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "Enable/disable the relay auto-off functionality"
+      },
+      {
+        "id": 2,
+        "name": "Auto-Off timeout",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "Sets the timeout for the relay (activated by turning on the relay)"
+      }
+    ]
+  },
+  {
+    "name": "Seriot UC Demo",
+    "id": 91000,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 0,
+        "name": "Dataflow",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "Provides a constant flow of characters"
+      },
+      {
+        "id": 1,
+        "name": "Period",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "Set the notification interval"
       }
     ]
   }

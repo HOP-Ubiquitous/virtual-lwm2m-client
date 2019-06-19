@@ -1,0 +1,65 @@
+[
+  {
+    "name": "HOP240ac406a79e",
+    "serverUrl": "coap://192.168.1.192",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 120,
+    "device": {
+      "model": "RelayControllerDevice",
+      "type": "Smart Cities",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "security": {
+      "mode": "noSec"
+    },
+    "location": {
+      "latitude": 38.0770456,
+      "longitude": -1.2712549000000308,
+      "altitude": 1
+    },
+    "relays": [
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      },
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      },
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      },
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      },
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      },
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      },
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      },
+      {
+        "state": true,
+        "autoOffEnabled": true,
+        "autoOffTimeout": 3000
+      }
+    ]
+  }
+]

@@ -44,8 +44,9 @@ public class DataModelIoTAgentDevice extends DeviceBase {
                                    boolean crowdMonitoring,
                                    Boolean isBootstrap,
                                    MetadataDto metadata,
-                                   ConnectivityMonitoringDto connectivityMonitoring) {
-        super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap);
+                                   ConnectivityMonitoringDto connectivityMonitoring,
+                                   SecurityMode securityMode) {
+        super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap, securityMode);
         this.temperatures = temperatures;
         this.humidities = humidities;
         this.loudness = loudness;
@@ -83,7 +84,8 @@ public class DataModelIoTAgentDevice extends DeviceBase {
                 jsonDevice.get("crowdMonitoring").getAsBoolean(),
                 jsonDevice.get("isBootstrap").getAsBoolean(),
                 gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class),
-                gson.fromJson(jsonDevice.get("connectivityMonitoring"), ConnectivityMonitoringDto.class)
+                gson.fromJson(jsonDevice.get("connectivityMonitoring"), ConnectivityMonitoringDto.class),
+                gson.fromJson(jsonDevice.get("security"), SecurityMode.class)
         );
     }
 

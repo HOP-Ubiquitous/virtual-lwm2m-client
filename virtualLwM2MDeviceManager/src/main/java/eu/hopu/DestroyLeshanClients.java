@@ -1,5 +1,6 @@
 package eu.hopu;
 
+import eu.hopu.observerPool.ObserverUpdater;
 import org.eclipse.leshan.client.californium.LeshanClient;
 
 import java.util.List;
@@ -16,7 +17,9 @@ public class DestroyLeshanClients {
 
 
     public void execute() {
-        for(LeshanClient leshanClient: leshanClients)
+        ObserverUpdater.INSTANCE.cancel();
+        for (LeshanClient leshanClient : leshanClients) {
             leshanClient.destroy(deregister);
+        }
     }
 }

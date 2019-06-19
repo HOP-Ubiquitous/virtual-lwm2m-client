@@ -1,77 +1,26 @@
 [
   {
-    "name": "HOP240ac403f14e",
-    "serverUrl": "coap://staging.hopu.eu",
+    "name": "SerIoT-virtual-device",
+    "serverUrl": "coap://192.168.1.192",
     "serverPort": "5683",
     "isBootstrap": false,
-    "lifetime": 120,
+    "lifetime": 90,
     "device": {
-      "model": "DataModelIoTAgentDevice",
-      "type": "Smart Cities",
+      "model": "SeriotDemoDevice",
       "batteryStatus": 0,
       "batteryLevel": 55
-    },
-    "connectivityMonitoring": {
-      "mnc": 9,
-      "mcc": 10,
-      "ipAddress": "192.168.1.1"
-    },
-    "metadata": {
-      "place": "Hop Ubiquitous",
-      "image": "images/img-hop-ubiquitous.jpeg"
     },
     "location": {
       "latitude": 38.0770456,
       "longitude": -1.2712549000000308,
       "altitude": 1
     },
-    "temperatures": [
-      {
-        "maxValue": 25,
-        "minValue": 19,
-        "sensorValue": 22
-      }
-    ],
-    "humidities": [
-      {
-        "maxValue": 60,
-        "minValue": 30,
-        "sensorValue": 45
-      }
-    ],
-    "loudness": {
-      "maxValue": 20,
-      "minValue": 10,
-      "sensorValue": 15
+    "security": {
+      "mode": "noSec"
     },
-    "gasses": [
-      {
-        "maxValue": 19,
-        "minValue": 0,
-        "sensorValue": 6
-      },
-      {
-        "maxValue": 52,
-        "minValue": 0,
-        "sensorValue": 17
-      },
-      {
-        "maxValue": 56,
-        "minValue": 0,
-        "sensorValue": 21
-      },
-      {
-        "maxValue": 100,
-        "minValue": 0,
-        "sensorValue": 40
-      },
-      {
-        "maxValue": 10,
-        "minValue": 0,
-        "sensorValue": 2
-      }
-    ],
-    "physicalUrl": "http://hopu.eu",
-    "crowdMonitoring": true
+    "data": {
+      "dataFlow": " Oh nooooooooooooo, pero luego sí",
+      "period": 7500
+    }
   }
 ]

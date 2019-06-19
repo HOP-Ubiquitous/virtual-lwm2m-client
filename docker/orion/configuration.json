@@ -1,0 +1,15 @@
+{
+  "orionConfig": {
+    "url": "http://orion",
+    "port": "1026"
+  },
+  "deviceConfigs": [],
+  "defaultDeviceConfig": {
+    "id": "default",
+    "dataModel": [
+      "SeriotUCDemo"
+    ],
+    "service": "Seriot",
+    "servicePath": "/seriot"
+  }
+}

@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import eu.hopu.dto.DeviceDto;
-import eu.hopu.dto.LocationDto;
-import eu.hopu.dto.MetadataDto;
-import eu.hopu.dto.SensorDto;
+import eu.hopu.dto.*;
 import eu.hopu.objects.*;
 import org.eclipse.leshan.client.resource.LwM2mObjectEnabler;
 import org.eclipse.leshan.client.resource.ObjectsInitializer;
@@ -47,8 +44,9 @@ public class SmartSpot extends DeviceBase {
                      String physicalUrl,
                      boolean crowdMonitoring,
                      Boolean isBootstrap,
-                     MetadataDto metadata) {
-        super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap);
+                     MetadataDto metadata,
+                     SecurityMode securityMode) {
+        super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap, securityMode);
         this.temperatures = temperatures;
         this.humidities = humidities;
         this.loudness = loudness;
@@ -84,7 +82,8 @@ public class SmartSpot extends DeviceBase {
                 jsonDevice.get("physicalUrl").getAsString(),
                 jsonDevice.get("crowdMonitoring").getAsBoolean(),
                 jsonDevice.get("isBootstrap").getAsBoolean(),
-                gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class)
+                gson.fromJson(jsonDevice.get("metadata"), MetadataDto.class),
+                gson.fromJson(jsonDevice.get("security"), SecurityMode.class)
         );
     }
 

@@ -1,0 +1,463 @@
+[
+  {
+    "dataModel": "AirQualityObserved",
+    "staticAttributes": [
+      {
+        "name": "dateObserved",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "source",
+        "type": "Text",
+        "staticValue": "www.hopu.eu"
+      },
+      {
+        "name": "airQualityLevel",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "airQualityIndex",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "reliability",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "refDevice",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "refPointOfInterest",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      }
+    ],
+    "lazyAttributes": [],
+    "activeAttributes": [
+      {
+        "name": "location",
+        "type": "Point",
+        "southboundAttributes": [
+          "/6/0/0",
+          "/6/0/1"
+        ]
+      },
+      {
+        "name": "NO2",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/0/5700"
+        ]
+      },
+      {
+        "name": "O3",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/1/5700"
+        ]
+      },
+      {
+        "name": "CO",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/2/5700"
+        ]
+      },
+      {
+        "name": "SO2",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/3/5700"
+        ]
+      }
+    ]
+  },
+  {
+    "dataModel": "DeviceModel",
+    "staticAttributes": [
+      {
+        "name": "deviceClass",
+        "type": "Text",
+        "staticValue": "C0"
+      },
+      {
+        "name": "controlledProperty",
+        "type": "ListOfText",
+        "staticValue": [
+          "temperature",
+          "humidity"
+        ]
+      },
+      {
+        "name": "function",
+        "type": "ListOfText",
+        "staticValue": [
+          "levelControl",
+          "sensing",
+          "onOff",
+          "openClose",
+          "metering",
+          "eventNotification"
+        ]
+      },
+      {
+        "name": "supportedUnits",
+        "type": "ListOfText",
+        "staticValue": [
+          "Unit"
+        ]
+      },
+      {
+        "name": "supportedProtocol",
+        "type": "Text",
+        "staticValue": "OMA LWM2M"
+      },
+      {
+        "name": "energyLimitationClass",
+        "type": "Text",
+        "staticValue": "E0"
+      },
+      {
+        "name": "brandName",
+        "type": "Text",
+        "staticValue": "SmartSpot"
+      },
+      {
+        "name": "description",
+        "type": "Text",
+        "staticValue": "The amazing SmartSpot"
+      },
+      {
+        "name": "documentation",
+        "type": "Text",
+        "staticValue": "http://www.hopu.eu/downloads/"
+      }
+    ],
+    "lazyAttributes": [
+      {
+        "name": "category",
+        "type": "ListOfText",
+        "southboundAttributes": [
+          "/3/0/17"
+        ]
+      },
+      {
+        "name": "name",
+        "type": "Text",
+        "southboundAttributes": [
+          "/32970/0/0"
+        ]
+      },
+      {
+        "name": "image",
+        "type": "Text",
+        "southboundAttributes": [
+          "/32970/0/2"
+        ]
+      },
+      {
+        "name": "modelName",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/1"
+        ]
+      },
+      {
+        "name": "manufacturerName",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/0"
+        ]
+      }
+    ],
+    "activeAttributes": []
+  },
+  {
+    "dataModel": "Device",
+    "staticAttributes": [
+      {
+        "name": "controlledProperty",
+        "type": "Text",
+        "staticValue": "temperature;humidity"
+      },
+      {
+        "name": "controlledAsset",
+        "type": "Text",
+        "staticValue": "temperature;humidity"
+      },
+      {
+        "name": "macAddress",
+        "type": "Text",
+        "staticValue": "00:00:00:00:00:00"
+      },
+      {
+        "name": "supportedProtocol",
+        "type": "Text",
+        "staticValue": "OMA LWM2M"
+      },
+      {
+        "name": "configuration",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "description",
+        "type": "Text",
+        "staticValue": "The amazing SmartSpot"
+      },
+      {
+        "name": "dateInstalled",
+        "type": "DateTime",
+        "staticValue": "2014-09-11T11:00:00Z"
+      },
+      {
+        "name": "dateFirstUsed",
+        "type": "DateTime",
+        "staticValue": "2014-09-11T11:00:00Z"
+      },
+      {
+        "name": "dateManufactured",
+        "type": "DateTime",
+        "staticValue": "2014-09-11T11:00:00Z"
+      },
+      {
+        "name": "osVersion",
+        "type": "Text",
+        "staticValue": "NotAvailable"
+      },
+      {
+        "name": "dateLastCalibration",
+        "type": "DateTime",
+        "staticValue": "2014-09-11T11:00:00Z"
+      },
+      {
+        "name": "refDeviceModel",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "deviceState",
+        "type": "Text",
+        "staticValue": "OK"
+      },
+      {
+        "name": "dateLastValueReported",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      },
+      {
+        "name": "value",
+        "type": "Text",
+        "staticValue": "NotSupported"
+      }
+    ],
+    "lazyAttributes": [
+      {
+        "name": "category",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/17"
+        ]
+      },
+      {
+        "name": "mnc",
+        "type": "Text",
+        "southboundAttributes": [
+          "/4/0/9"
+        ]
+      },
+      {
+        "name": "mcc",
+        "type": "Text",
+        "southboundAttributes": [
+          "/4/0/10"
+        ]
+      },
+      {
+        "name": "ipAddress",
+        "type": "Text",
+        "southboundAttributes": [
+          "/4/0/4"
+        ]
+      },
+      {
+        "name": "name",
+        "type": "Text",
+        "southboundAttributes": [
+          "/32970/0/0"
+        ]
+      },
+      {
+        "name": "hardwareVersion",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/18"
+        ]
+      },
+      {
+        "name": "sotfwareVersion",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/19"
+        ]
+      },
+      {
+        "name": "firmwareVersion",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/3"
+        ]
+      },
+      {
+        "name": "serialNumber",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/2"
+        ]
+      },
+      {
+        "name": "provider",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/0"
+        ]
+      },
+      {
+        "name": "batteryLevel",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3/0/9"
+        ]
+      },
+      {
+        "name": "owner",
+        "type": "Text",
+        "southboundAttributes": [
+          "/3/0/0"
+        ]
+      }
+    ],
+    "activeAttributes": [
+      {
+        "name": "location",
+        "type": "Point",
+        "southboundAttributes": [
+          "/6/0/0",
+          "/6/0/1"
+        ]
+      }
+    ]
+  },
+  {
+    "dataModel": "HopuSmartSpot",
+    "staticAttributes": [],
+    "lazyAttributes": [],
+    "activeAttributes": [
+      {
+        "name": "location",
+        "type": "Point",
+        "southboundAttributes": [
+          "/6/0/0",
+          "/6/0/1"
+        ]
+      },
+      {
+        "name": "latitude",
+        "type": "Number",
+        "southboundAttributes": [
+          "/6/0/0"
+        ]
+      },
+      {
+        "name": "longitude",
+        "type": "Number",
+        "southboundAttributes": [
+          "/6/0/1"
+        ]
+      },
+      {
+        "name": "pm1",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/13/5700"
+        ]
+      },
+      {
+        "name": "pm10",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/14/5700"
+        ]
+      },
+      {
+        "name": "pm10",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/15/5700"
+        ]
+      },
+      {
+        "name": "NO2",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/0/5700"
+        ]
+      },
+      {
+        "name": "O3",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/1/5700"
+        ]
+      },
+      {
+        "name": "CO",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/2/5700"
+        ]
+      },
+      {
+        "name": "SO2",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3325/3/5700"
+        ]
+      },
+      {
+        "name": "temperature",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3303/0/5700"
+        ]
+      },
+      {
+        "name": "humidity",
+        "type": "Number",
+        "southboundAttributes": [
+          "/3304/0/5700"
+        ]
+      }
+    ]
+  },
+  {
+    "dataModel": "SeriotUCDemo",
+    "staticAttributes": [],
+    "lazyAttributes": [],
+    "activeAttributes": [
+      {
+        "name": "dataflow",
+        "type": "Text",
+        "southboundAttributes": [
+          "/91000/0/0"
+        ]
+      }
+    ]
+  }
+]

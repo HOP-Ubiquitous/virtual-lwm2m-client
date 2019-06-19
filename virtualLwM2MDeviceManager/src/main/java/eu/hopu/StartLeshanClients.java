@@ -5,6 +5,8 @@ import org.eclipse.leshan.client.californium.LeshanClient;
 
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class StartLeshanClients {
 
     private List<LeshanClient> leshanClients;
@@ -15,8 +17,15 @@ public class StartLeshanClients {
 
 
     public void execute() {
-        for (LeshanClient client : leshanClients)
+        for (LeshanClient client : leshanClients) {
+            try {
+                sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             client.start();
+
+        }
 
         ObserverUpdater.INSTANCE.initializeObserveUpdater();
 

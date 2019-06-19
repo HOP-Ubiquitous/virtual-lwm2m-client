@@ -33,8 +33,8 @@ public class EasyConnectDevice extends DeviceBase {
     }
 
     public EasyConnectDevice(String name, String serverUrl, String serverPort, int lifetime, DeviceDto device, LocationDto location, List<SensorDto> temperatures, List<SensorDto> humidities, SensorDto loudness, List<SensorDto> gasses, String physicalUrl, boolean crowdMonitoring, Boolean isBootstrap
-            ,APNConnectionDto apnConnectivity, WlanConnectionDto wlanConnectivity) {
-        super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap);
+            ,APNConnectionDto apnConnectivity, WlanConnectionDto wlanConnectivity, SecurityMode securityMode) {
+        super(name, serverUrl, serverPort, lifetime, device, location, isBootstrap, securityMode);
         this.temperatures = temperatures;
         this.humidities = humidities;
         this.loudness = loudness;
@@ -72,7 +72,8 @@ public class EasyConnectDevice extends DeviceBase {
                 jsonDevice.get("crowdMonitoring").getAsBoolean(),
                 jsonDevice.get("isBootstrap").getAsBoolean(),
                 gson.fromJson(jsonDevice.get("apnConnectivity"), APNConnectionDto.class),
-                gson.fromJson(jsonDevice.get("wlanConnectivity"), WlanConnectionDto.class)
+                gson.fromJson(jsonDevice.get("wlanConnectivity"), WlanConnectionDto.class),
+                gson.fromJson(jsonDevice.get("security"), SecurityMode.class)
         );
     }
 

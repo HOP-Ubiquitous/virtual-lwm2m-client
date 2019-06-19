@@ -1,0 +1,50 @@
+version: '3.3'
+
+services:
+
+  orion:
+    image: fiware/orion:2.2.0
+    command:
+      -dbhost mongo
+      -corsOrigin __ALL
+      -logLevel DEBUG
+    ports:
+      - target: 1026
+        published: 1026
+        protocol: tcp
+        mode: host
+    networks:
+      - iotagent-net
+
+  iotagent-dm:
+    image: iotagent-dm:develop
+    ports:
+      - target: 5683
+        published: 5683
+        protocol: udp
+        mode: host
+    configs:
+      - source: iota-conf
+        target: /usr/local/properties/configuration.json
+      - source: iota-dm
+        target: /usr/local/properties/datamodels.json
+      - source: iota-objectspec
+        target: /usr/local/properties/objectspec.json
+    environment:
+      - CONTEXT_PROVIDER_URL=http://iotagent-dm:8080
+    networks:
+      - iotagent-net
+
+configs:
+  iota-conf:
+    file: ./configuration.json
+
+  iota-dm:
+    file: ./datamodels.json
+
+  iota-objectspec:
+    file: ../../virtualLwM2MDeviceManager/src/main/resources/objectspec/objectspec.json
+
+networks:
+  iotagent-net:
+    external: true

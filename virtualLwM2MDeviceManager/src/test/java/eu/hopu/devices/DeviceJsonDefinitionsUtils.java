@@ -45,6 +45,9 @@ public class DeviceJsonDefinitionsUtils {
                 "           \"sensorValue\": 42\n" +
                 "       }\n" +
                 "   ],\n" +
+                "   \"security\": {\n" +
+                "       \"mode\":\"noSec\"\n" +
+                "   },\n" +
                 "   \"loudness\": {\n" +
                 "       \"maxValue\": 20,\n" +
                 "       \"minValue\": 10,\n" +
