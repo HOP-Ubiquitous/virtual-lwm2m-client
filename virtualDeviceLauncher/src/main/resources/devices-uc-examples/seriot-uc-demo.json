@@ -1,0 +1,26 @@
+[
+  {
+    "name": "SerIoT-virtual-device",
+    "serverUrl": "coap://192.168.1.192",
+    "serverPort": "5683",
+    "isBootstrap": false,
+    "lifetime": 90,
+    "device": {
+      "model": "SeriotDemoDevice",
+      "batteryStatus": 0,
+      "batteryLevel": 55
+    },
+    "location": {
+      "latitude": 38.0770456,
+      "longitude": -1.2712549000000308,
+      "altitude": 1
+    },
+    "security": {
+      "mode": "noSec"
+    },
+    "data": {
+      "dataFlow": "Maintenance alarm.",
+      "period": 1500
+    }
+  }
+]

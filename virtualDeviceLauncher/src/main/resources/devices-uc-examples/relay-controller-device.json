@@ -21,42 +21,42 @@
     },
     "relays": [
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       },
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       },
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       },
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       },
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       },
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       },
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       },
       {
-        "state": true,
+        "state": "off",
         "autoOffEnabled": true,
         "autoOffTimeout": 3000
       }

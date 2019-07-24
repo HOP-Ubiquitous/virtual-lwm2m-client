@@ -92,6 +92,9 @@ public class DeviceObject extends BaseInstanceEnabler {
 
     @Override
     public WriteResponse write(int resourceid, LwM2mResource value) {
+        if (resourceid == 14) {
+            utcOffset = (String) value.getValue();
+        }
         return WriteResponse.success();
     }
 

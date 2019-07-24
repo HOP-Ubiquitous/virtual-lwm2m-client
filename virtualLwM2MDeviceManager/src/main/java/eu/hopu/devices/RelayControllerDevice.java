@@ -59,7 +59,7 @@ public class RelayControllerDevice extends DeviceBase {
             int index = 0;
             for (RelayDto relay : relays) {
                 relayObject[index++] = new RelayObject(
-                        relay.isState(),
+                        relay.getState(),
                         relay.isAutoOffEnabled(),
                         relay.getAutoOffTimeout()
                 );

@@ -7,43 +7,40 @@ import org.eclipse.leshan.core.response.ExecuteResponse;
 import org.eclipse.leshan.core.response.ReadResponse;
 import org.eclipse.leshan.core.response.WriteResponse;
 
+import static java.lang.Thread.sleep;
+
 public class RelayObject extends BaseInstanceEnabler {
 
     public static final int ID = 32983;
 
-    private boolean state;
+    private String state;
     private boolean autoOffEnabled;
     private long autoOffTimeout;
 
-    public RelayObject(boolean state, boolean autoOffEnabled, long autoOffTimeout) {
+    public RelayObject(String state, boolean autoOffEnabled, long autoOffTimeout) {
         this.state = state;
         this.autoOffEnabled = autoOffEnabled;
         this.autoOffTimeout = autoOffTimeout;
         ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 0);
-        ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 1);
-        ObserverUpdater.INSTANCE.addObjectWithResourcesToObserve(this, 2);
     }
 
     @Override
     public ReadResponse read(int resourceid) {
         switch (resourceid) {
             case 0:
-                return ReadResponse.success(resourceid, isState());
+                return ReadResponse.success(resourceid, getState());
             case 1:
                 return ReadResponse.success(resourceid, isAutoOffEnabled());
             case 2:
                 return ReadResponse.success(resourceid, getAutoOffTimeout());
             default:
-                return super.read(resourceid);
+                return ReadResponse.methodNotAllowed();
         }
     }
 
     @Override
     public WriteResponse write(int resourceid, LwM2mResource value) {
         switch (resourceid) {
-            case 0:
-                this.state = (boolean) value.getValue();
-                return WriteResponse.success();
             case 1:
                 this.autoOffEnabled = (boolean) value.getValue();
                 return WriteResponse.success();
@@ -57,14 +54,35 @@ public class RelayObject extends BaseInstanceEnabler {
 
     @Override
     public ExecuteResponse execute(int resourceid, String params) {
-        return super.execute(resourceid, params);
+        if (resourceid == 3) {
+            setState("on");
+            fireResourcesChange(0);
+            if (isAutoOffEnabled()) {
+                new Thread(
+                        () -> {
+                            try {
+                                sleep(getAutoOffTimeout());
+                                setState("off");
+                                fireResourcesChange(0);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }).run();
+            }
+            return ExecuteResponse.success();
+        } else if (resourceid == 4) {
+            setState("off");
+            fireResourcesChange(0);
+            return ExecuteResponse.success();
+        }
+        return ExecuteResponse.methodNotAllowed();
     }
 
-    public boolean isState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(boolean state) {
+    public void setState(String state) {
         this.state = state;
     }
 

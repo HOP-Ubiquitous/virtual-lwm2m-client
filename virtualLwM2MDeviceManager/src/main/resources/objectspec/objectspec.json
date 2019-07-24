@@ -5465,48 +5465,6 @@
     ]
   },
   {
-    "name": "Relay Control",
-    "id": 32983,
-    "instancetype": "multiple",
-    "mandatory": false,
-    "description": "",
-    "resourcedefs": [
-      {
-        "id": 0,
-        "name": "Relay state",
-        "operations": "RW",
-        "instancetype": "single",
-        "mandatory": false,
-        "type": "boolean",
-        "range": "",
-        "units": "",
-        "description": "Enable/disable the relay or read the current value"
-      },
-      {
-        "id": 1,
-        "name": "Auto-Off enabled",
-        "operations": "RW",
-        "instancetype": "single",
-        "mandatory": false,
-        "type": "boolean",
-        "range": "",
-        "units": "",
-        "description": "Enable/disable the relay auto-off functionality"
-      },
-      {
-        "id": 2,
-        "name": "Auto-Off timeout",
-        "operations": "RW",
-        "instancetype": "single",
-        "mandatory": false,
-        "type": "integer",
-        "range": "",
-        "units": "",
-        "description": "Sets the timeout for the relay (activated by turning on the relay)"
-      }
-    ]
-  },
-  {
     "name": "Seriot UC Demo",
     "id": 91000,
     "instancetype": "multiple",
@@ -5534,6 +5492,70 @@
         "range": "",
         "units": "",
         "description": "Set the notification interval"
+      }
+    ]
+  },
+  {
+    "name": "Relay Control",
+    "id": 32983,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 0,
+        "name": "Relay state",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "Enable/disable the relay or read the current value"
+      },
+      {
+        "id": 1,
+        "name": "Auto-Off enabled",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": "Enable/disable the relay auto-off functionality"
+      },
+      {
+        "id": 2,
+        "name": "Auto-Off timeout",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": "Sets the timeout for the relay (activated by turning on the relay)"
+      },
+      {
+        "id": 3,
+        "name": "Enable",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "Changes relay status to on"
+      },
+      {
+        "id": 4,
+        "name": "Disable",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": "Changes relay status to off"
       }
     ]
   }

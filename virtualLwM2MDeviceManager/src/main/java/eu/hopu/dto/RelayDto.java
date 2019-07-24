@@ -2,24 +2,24 @@ package eu.hopu.dto;
 
 public class RelayDto {
 
-    private boolean state;
+    private String state;
     private boolean autoOffEnabled;
     private long autoOffTimeout;
 
     public RelayDto() {
     }
 
-    public RelayDto(boolean state, boolean autoOffEnabled, long autoOffTimeout) {
+    public RelayDto(String state, boolean autoOffEnabled, long autoOffTimeout) {
         this.state = state;
         this.autoOffEnabled = autoOffEnabled;
         this.autoOffTimeout = autoOffTimeout;
     }
 
-    public boolean isState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(boolean state) {
+    public void setState(String state) {
         this.state = state;
     }
 
